@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntry, render } from 'astro:content';
+
+const about = await getEntry('about', 'about');
+const { Content } = about ? await render(about) : { Content: null };
+---
+<BaseLayout title="אודות" description="קצת עליי - מעיין בשן, מומחית שפת גוף">
+  <section class="about-page">
+    <h1>{about?.data.title}</h1>
+    <div class="content">
+      {Content && <Content />}
+    </div>
+  </section>
+</BaseLayout>
+<style>
+  .about-page { max-width: 720px; margin: 0 auto; padding: 3rem 2rem; }
+  .about-page h1 { color: var(--color-teal); }
+  .content :global(p) { line-height: 1.8; margin-bottom: 1rem; }
+</style>
