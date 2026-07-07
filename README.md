@@ -1,0 +1,31 @@
+# אתר מעיין בשן
+
+## פיתוח מקומי
+
+```bash
+npm install
+npm run dev
+```
+
+האתר יעלה בכתובת http://localhost:4321
+
+## פריסה (Netlify) - שלבים חד-פעמיים
+
+1. העלו את הריפו הזה ל-GitHub (או GitLab/Bitbucket).
+2. ב-Netlify: "Add new site" → "Import an existing project" → חברו את הריפו.
+   - Build command: `npm run build`
+   - Publish directory: `dist`
+3. **הפעלת Netlify Identity** (נדרש כדי שמעיין תוכל להתחבר לפאנל הניהול):
+   - Site settings → Identity → Enable Identity
+   - Identity → Registration → הגבילו ל-"Invite only"
+   - Identity → Services → Git Gateway → Enable Git Gateway
+4. הזמינו את מעיין כמשתמשת: Identity → Invite users → הזינו את המייל שלה. היא תקבל מייל הזמנה, תגדיר סיסמה, ומאותו רגע תוכל להתחבר בכתובת `https://<הדומיין>/admin`.
+5. **חיבור הדומיין הקיים:**
+   - Domain settings → Add a domain → הזינו את הדומיין הקיים.
+   - Netlify יציג רשומות DNS (CNAME/A) - עדכנו אותן אצל ספק הדומיין.
+   - המתינו להטמעת תעודת ה-SSL האוטומטית (בדרך כלל עד שעה).
+6. אחרי שהדומיין הסופי מחובר, עדכנו את `site` ב-`astro.config.mjs` לדומיין האמיתי ועשו commit. שימו לב גם ל-`public/admin/config.yml`: הערך `backend.branch: main` מניח שברירת המחדל של הריפו ב-GitHub היא `main` - אם ענף ברירת המחדל שונה, עדכנו את הערך בהתאם.
+
+## עריכת תוכן
+
+מעיין נכנסת ל-`/admin`, מתחברת, ועורכת: הגדרות כלליות, אודות, תקשורת, הרצאות וקורסים, ארגונים, המלצות, ולוגואים. כל שמירה יוצרת commit ומפעילה דיפלוי אוטומטי (כדקה עד שהשינוי עולה לאוויר).
