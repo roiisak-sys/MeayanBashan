@@ -1,0 +1,96 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "settings"
+    label: "הגדרות אתר"
+    files:
+      - file: "src/content/settings/settings.md"
+        name: "settings"
+        label: "הגדרות כלליות"
+        fields:
+          - {label: "כותרת האתר", name: "title", widget: "string"}
+          - {label: "טאגליין", name: "tagline", widget: "string"}
+          - {label: "תמונת הירו", name: "heroImage", widget: "image"}
+          - {label: "ביו קצר", name: "shortBio", widget: "text"}
+          - {label: "טלפון", name: "phone", widget: "string"}
+          - {label: "מייל", name: "email", widget: "string"}
+          - {label: "אינסטגרם", name: "instagram", widget: "string", required: false}
+          - {label: "טיקטוק", name: "tiktok", widget: "string", required: false}
+          - {label: "פייסבוק", name: "facebook", widget: "string", required: false}
+  - name: "about"
+    label: "אודות"
+    files:
+      - file: "src/content/about/about.md"
+        name: "about"
+        label: "תוכן אודות"
+        fields:
+          - {label: "כותרת", name: "title", widget: "string"}
+          - {label: "תוכן", name: "body", widget: "markdown"}
+  - name: "media"
+    label: "תקשורת"
+    folder: "src/content/media"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "כותרת", name: "title", widget: "string"}
+      - label: "קטגוריה"
+        name: "category"
+        widget: "select"
+        options:
+          - {label: "טלוויזיה", value: "tv"}
+          - {label: "פודקאסט", value: "podcast"}
+          - {label: "כתבה/פינה", value: "article"}
+          - {label: "אחר", value: "other"}
+      - {label: "תאריך", name: "date", widget: "datetime"}
+      - {label: "קישור חיצוני", name: "url", widget: "string"}
+      - {label: "תמונה", name: "image", widget: "image", required: false}
+      - {label: "תיאור קצר", name: "description", widget: "text", required: false}
+  - name: "courses"
+    label: "הרצאות וקורסים"
+    folder: "src/content/courses"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "כותרת", name: "title", widget: "string"}
+      - {label: "תיאור", name: "body", widget: "markdown"}
+      - {label: "פורמט", name: "format", widget: "string"}
+      - {label: "קישור/טלפון ליצירת קשר", name: "contactLink", widget: "string"}
+      - {label: "תמונה", name: "image", widget: "image", required: false}
+      - {label: "מוצג בדף הבית", name: "featured", widget: "boolean", default: false}
+  - name: "organizations"
+    label: "ארגונים"
+    files:
+      - file: "src/content/organizations/organizations.md"
+        name: "organizations"
+        label: "תוכן דף ארגונים"
+        fields:
+          - {label: "כותרת", name: "title", widget: "string"}
+          - {label: "תוכן", name: "body", widget: "markdown"}
+          - label: "נקודות עיקריות"
+            name: "bullets"
+            widget: "list"
+            field: {label: "נקודה", name: "text", widget: "string"}
+  - name: "testimonials"
+    label: "המלצות"
+    folder: "src/content/testimonials"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: author
+    fields:
+      - {label: "שם הממליץ/ה", name: "author", widget: "string"}
+      - {label: "ציטוט", name: "quote", widget: "text"}
+      - {label: "תמונה/מקור", name: "source", widget: "string", required: false}
+  - name: "partner_logos"
+    label: "לוגואים - כפי שהופיעה ב"
+    folder: "src/content/partner_logos"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: name
+    fields:
+      - {label: "שם הגוף", name: "name", widget: "string"}
+      - {label: "לוגו", name: "logo", widget: "image"}
