@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const mediaItems = (await getCollection('media')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+const categoryLabels: Record<string, string> = {
+  tv: 'טלוויזיה',
+  podcast: 'פודקאסטים',
+  article: 'כתבות ופינות',
+  other: 'אחר',
+};
+---
+<BaseLayout title="תקשורת" description="אזכורים תקשורתיים של מעיין בשן">
+  <section class="media-page">
+    <h1>תקשורת</h1>
+    <div class="filters">
+      <button data-filter="all" class="active">הכל</button>
+      {Object.entries(categoryLabels).map(([key, label]) => (
+        <button data-filter={key}>{label}</button>
+      ))}
+    </div>
+    <div class="media-grid">
+      {mediaItems.map((item) => (
+        <a class="media-card" data-category={item.data.category} href={item.data.url} target="_blank" rel="noopener">
+          {item.data.image && <img src={item.data.image} alt={item.data.title} />}
+          <span class="category-tag">{categoryLabels[item.data.category]}</span>
+          <h3>{item.data.title}</h3>
+          {item.data.description && <p>{item.data.description}</p>}
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+<style>
+  .media-page { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem; }
+  .media-page h1 { color: var(--color-teal); text-align: center; margin-bottom: 2rem; }
+  .filters { display: flex; justify-content: center; gap: 0.75rem; margin-bottom: 2rem; flex-wrap: wrap; }
+  .filters button {
+    padding: 0.5rem 1.25rem;
+    border-radius: 999px;
+    border: 2px solid var(--color-teal);
+    background: white;
+    color: var(--color-teal);
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .filters button.active { background: var(--color-teal); color: white; }
+  .media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+  .media-card {
+    display: block;
+    padding: 1rem;
+    border-radius: 12px;
+    background: var(--color-cream);
+    text-decoration: none;
+    color: var(--color-text);
+  }
+  .media-card img { width: 100%; border-radius: 8px; margin-bottom: 0.75rem; }
+  .category-tag { font-size: 0.75rem; color: var(--color-orange); font-weight: 700; }
+</style>
+<script>
+  const buttons = document.querySelectorAll<HTMLButtonElement>('.filters button');
+  const cards = document.querySelectorAll<HTMLElement>('.media-card');
+
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      buttons.forEach((b) => b.classList.remove('active'));
+      button.classList.add('active');
+      const filter = button.dataset.filter;
+      cards.forEach((card) => {
+        const show = filter === 'all' || card.dataset.category === filter;
+        card.style.display = show ? 'block' : 'none';
+      });
+    });
+  });
+</script>
