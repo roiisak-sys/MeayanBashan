@@ -27,6 +27,8 @@ const { Content } = org ? await render(org) : { Content: null };
       <label>פרטים נוספים<textarea name="message" rows="4"></textarea></label>
       <button type="submit">שליחה</button>
     </form>
+    <p class="form-success" hidden>תודה! ההודעה נשלחה בהצלחה, נחזור אליכם בהקדם.</p>
+    <p class="form-error" hidden>משהו השתבש. נסו שוב או צרו קשר ישירות בטלפון/במייל.</p>
   </section>
 </BaseLayout>
 <style>
@@ -48,4 +50,39 @@ const { Content } = org ? await render(org) : { Content: null };
     font-weight: 700;
     cursor: pointer;
   }
+  .form-success, .form-error { text-align: center; font-weight: 600; }
+  .form-success { color: var(--color-teal); }
+  .form-error { color: var(--color-red); }
+  [hidden] { display: none; }
 </style>
+<script>
+  const form = document.querySelector<HTMLFormElement>('form[name="business-contact"]');
+  const successMessage = document.querySelector<HTMLElement>('.form-success');
+  const errorMessage = document.querySelector<HTMLElement>('.form-error');
+
+  const encode = (data: FormData) =>
+    Array.from(data.entries())
+      .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(String(value))}`)
+      .join('&');
+
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    errorMessage?.setAttribute('hidden', '');
+
+    const formData = new FormData(form);
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode(formData),
+    })
+      .then((response) => {
+        if (!response.ok) throw new Error('Form submission failed');
+        form.hidden = true;
+        successMessage?.removeAttribute('hidden');
+      })
+      .catch(() => {
+        errorMessage?.removeAttribute('hidden');
+      });
+  });
+</script>
