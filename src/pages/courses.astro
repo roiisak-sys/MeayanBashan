@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+const courses = await getCollection('courses');
+const renderedCourses = await Promise.all(
+  courses.map(async (course) => ({ course, Content: (await render(course)).Content }))
+);
+---
+<BaseLayout title="הרצאות וקורסים" description="הרצאות וקורסים של מעיין בשן">
+  <section class="courses-page">
+    <h1>הרצאות וקורסים</h1>
+    <div class="courses-list">
+      {renderedCourses.map(({ course, Content }) => (
+        <article class="course-card">
+          {course.data.image && <img src={course.data.image} alt={course.data.title} />}
+          <div class="course-body">
+            <h2>{course.data.title}</h2>
+            <p class="format">{course.data.format}</p>
+            <div class="description"><Content /></div>
+            <a class="contact-cta" href={course.data.contactLink}>ליצירת קשר להרשמה</a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+<style>
+  .courses-page { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
+  .courses-page h1 { color: var(--color-teal); text-align: center; margin-bottom: 2rem; }
+  .course-card {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    background: var(--color-cream);
+    border-radius: 12px;
+  }
+  .course-card img { width: 160px; height: 160px; object-fit: cover; border-radius: 8px; }
+  .format { color: var(--color-orange); font-weight: 700; }
+  .contact-cta {
+    display: inline-block;
+    margin-top: 0.75rem;
+    padding: 0.5rem 1.25rem;
+    background: var(--color-teal);
+    color: white;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 700;
+  }
+  @media (max-width: 640px) {
+    .course-card { flex-direction: column; }
+    .course-card img { width: 100%; height: auto; }
+  }
+</style>
