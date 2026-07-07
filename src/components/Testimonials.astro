@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 const testimonials = await getCollection('testimonials');
 ---
 {testimonials.length > 0 && (
-  <section class="testimonials">
+  <section class="testimonials" id="testimonials">
     <h2>מה אומרים עליי</h2>
     <div class="testimonials-grid">
       {testimonials.map((t) => (
