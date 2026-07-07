@@ -1,0 +1,30 @@
+---
+import { getCollection } from 'astro:content';
+const logos = await getCollection('partner_logos');
+---
+{logos.length > 0 && (
+  <section class="partner-logos">
+    <h2>כפי שהופיעה ב</h2>
+    <div class="logos-grid">
+      {logos.map((logo) => (
+        <img src={logo.data.logo} alt={logo.data.name} loading="lazy" />
+      ))}
+    </div>
+  </section>
+)}
+<style>
+  .partner-logos {
+    padding: 2rem;
+    text-align: center;
+    background: #1c1c1c;
+  }
+  .partner-logos h2 { color: white; margin-bottom: 1.5rem; font-size: 1.1rem; }
+  .logos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+  .logos-grid img { height: 48px; filter: grayscale(1) brightness(2); }
+</style>

@@ -1,0 +1,45 @@
+---
+import { getEntry } from 'astro:content';
+const settings = await getEntry('settings', 'settings');
+---
+<section class="hero">
+  <div class="hero-text">
+    <h1>{settings?.data.tagline}</h1>
+    <p>{settings?.data.shortBio}</p>
+    <a class="cta" href="/contact">בואו נדבר</a>
+  </div>
+  {settings?.data.heroImage && (
+    <div class="hero-image">
+      <img src={settings.data.heroImage} alt="מעיין בשן" />
+    </div>
+  )}
+</section>
+<style>
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 3rem 2rem;
+    background: var(--color-cream);
+  }
+  .hero-text { max-width: 480px; }
+  .hero-text h1 { font-size: 2.25rem; color: var(--color-teal); }
+  .cta {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--color-orange);
+    color: white;
+    text-decoration: none;
+    border-radius: 999px;
+    font-weight: 700;
+  }
+  .hero-image img {
+    max-width: 340px;
+    border-radius: 50%;
+  }
+  @media (max-width: 768px) {
+    .hero { flex-direction: column; text-align: center; }
+  }
+</style>
