@@ -1,7 +1,7 @@
 ---
-title: "ראיון בתוכנית הבוקר"
-category: "tv"
+title: שפת גוף- מיוחד לYNET
+category: article
 date: 2026-01-01
-url: "https://example.com"
-description: "פריט לדוגמה - יוחלף בתוכן אמיתי דרך פאנל הניהול."
+url: https://www.youtube.com/watch?v=AfM24vYHN2c
+description: ""
 ---
