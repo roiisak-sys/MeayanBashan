@@ -2,6 +2,7 @@
 import SocialIcons from './SocialIcons.astro';
 ---
 <footer class="site-footer">
+  <img class="footer-logo" src="/images/logo-white.png" alt="מעיין בשן" />
   <p>© {new Date().getFullYear()} מעיין בשן. כל הזכויות שמורות.</p>
   <div class="socials">
     <SocialIcons />
@@ -17,5 +18,10 @@ import SocialIcons from './SocialIcons.astro';
   .socials {
     margin-top: 0.75rem;
     color: white;
+  }
+  .footer-logo {
+    height: 28px;
+    width: auto;
+    margin: 0 auto 0.75rem;
   }
 </style>

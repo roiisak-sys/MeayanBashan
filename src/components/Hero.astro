@@ -36,7 +36,7 @@ const settings = await getEntry('settings', 'settings');
     font-weight: 700;
   }
   .hero-image img {
-    max-width: 380px;
+    max-width: min(380px, 100%);
   }
   @media (max-width: 768px) {
     .hero { flex-direction: column; text-align: center; }

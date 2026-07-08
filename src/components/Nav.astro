@@ -10,7 +10,9 @@ const links = [
 ];
 ---
 <header class="site-nav">
-  <a href="/" class="brand">מעיין בשן</a>
+  <a href="/" class="brand">
+    <img src="/images/logo-teal.png" alt="מעיין בשן" />
+  </a>
   <nav>
     <ul>
       {links.map((link) => (
@@ -28,10 +30,14 @@ const links = [
     background: var(--color-cream);
   }
   .brand {
-    font-weight: 700;
-    font-size: 1.25rem;
-    color: var(--color-teal);
-    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+  }
+  .brand img {
+    height: 30px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
   }
   nav ul {
     display: flex;
@@ -51,5 +57,6 @@ const links = [
   @media (max-width: 640px) {
     .site-nav { flex-direction: column; gap: 1rem; }
     nav ul { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+    .brand img { height: 24px; }
   }
 </style>
