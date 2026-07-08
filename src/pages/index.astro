@@ -5,7 +5,7 @@ import PartnerLogos from '../components/PartnerLogos.astro';
 import Testimonials from '../components/Testimonials.astro';
 import { getEntry, getCollection } from 'astro:content';
 
-const about = await getEntry('about', 'about');
+const settings = await getEntry('settings', 'settings');
 const courses = await getCollection('courses');
 const featuredCourse = courses.find((c) => c.data.featured) ?? courses[0];
 ---
@@ -14,7 +14,7 @@ const featuredCourse = courses.find((c) => c.data.featured) ?? courses[0];
   <PartnerLogos />
   <section class="about-teaser">
     <h2>קצת עליי</h2>
-    <p>{about?.data.title}</p>
+    <p>{settings?.data.shortBio}</p>
     <a href="/about">לקריאת הסיפור המלא</a>
   </section>
   {featuredCourse && (

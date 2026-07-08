@@ -1,7 +1,7 @@
 ---
 title: "מעיין בשן"
 tagline: "לקרוא אנשים כמו ספר פתוח"
-heroImage: "/images/placeholder-hero.svg"
+heroImage: "/images/maayan-hero.png"
 shortBio: "מומחית שפת גוף, מרצה ופרשנית תקשורת לא מילולית."
 phone: "050-0000000"
 email: "info@maayanbashan.co.il"
