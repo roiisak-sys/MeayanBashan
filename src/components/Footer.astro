@@ -1,13 +1,10 @@
 ---
-import { getEntry } from 'astro:content';
-const settings = await getEntry('settings', 'settings');
+import SocialIcons from './SocialIcons.astro';
 ---
 <footer class="site-footer">
   <p>© {new Date().getFullYear()} מעיין בשן. כל הזכויות שמורות.</p>
   <div class="socials">
-    {settings?.data.instagram && <a href={settings.data.instagram} target="_blank" rel="noopener">אינסטגרם</a>}
-    {settings?.data.tiktok && <a href={settings.data.tiktok} target="_blank" rel="noopener">טיקטוק</a>}
-    {settings?.data.facebook && <a href={settings.data.facebook} target="_blank" rel="noopener">פייסבוק</a>}
+    <SocialIcons />
   </div>
 </footer>
 <style>
@@ -18,13 +15,7 @@ const settings = await getEntry('settings', 'settings');
     color: white;
   }
   .socials {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 0.5rem;
-  }
-  .socials a {
+    margin-top: 0.75rem;
     color: white;
-    text-decoration: underline;
   }
 </style>

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SocialIcons from '../components/SocialIcons.astro';
 import { getEntry } from 'astro:content';
 
 const settings = await getEntry('settings', 'settings');
@@ -11,9 +12,7 @@ const settings = await getEntry('settings', 'settings');
       <p>טלפון: <a href={`tel:${settings?.data.phone}`}>{settings?.data.phone}</a></p>
       <p>מייל: <a href={`mailto:${settings?.data.email}`}>{settings?.data.email}</a></p>
       <div class="socials">
-        {settings?.data.instagram && <a href={settings.data.instagram} target="_blank" rel="noopener">אינסטגרם</a>}
-        {settings?.data.tiktok && <a href={settings.data.tiktok} target="_blank" rel="noopener">טיקטוק</a>}
-        {settings?.data.facebook && <a href={settings.data.facebook} target="_blank" rel="noopener">פייסבוק</a>}
+        <SocialIcons />
       </div>
     </div>
     <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
@@ -33,7 +32,7 @@ const settings = await getEntry('settings', 'settings');
   .contact-page { max-width: 640px; margin: 0 auto; padding: 3rem 2rem; }
   .contact-page h1 { color: var(--color-teal); text-align: center; }
   .contact-info { text-align: center; margin-bottom: 2rem; }
-  .socials { display: flex; justify-content: center; gap: 1rem; margin-top: 0.5rem; }
+  .socials { margin-top: 0.75rem; color: var(--color-teal); }
   form { display: flex; flex-direction: column; gap: 1rem; }
   label { display: flex; flex-direction: column; gap: 0.35rem; font-weight: 600; }
   input, textarea { padding: 0.6rem; border-radius: 8px; border: 1px solid #ccc; font-family: inherit; }
