@@ -70,12 +70,16 @@ collections:
         name: "organizations"
         label: "תוכן דף ארגונים"
         fields:
+          - {label: "תגית עליונה", name: "tag", widget: "string"}
           - {label: "כותרת", name: "title", widget: "string"}
-          - {label: "תוכן", name: "body", widget: "markdown"}
-          - label: "נקודות עיקריות"
-            name: "bullets"
+          - {label: "פתיח", name: "intro", widget: "text"}
+          - label: "יתרונות (רשת 2x2)"
+            name: "benefits"
             widget: "list"
-            field: {label: "נקודה", name: "text", widget: "string"}
+            fields:
+              - {label: "כותרת", name: "title", widget: "string"}
+              - {label: "תיאור", name: "description", widget: "string"}
+          - {label: "פסקת סיכום", name: "closing", widget: "text"}
   - name: "testimonials"
     label: "המלצות"
     folder: "src/content/testimonials"

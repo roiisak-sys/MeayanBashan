@@ -26,8 +26,11 @@ const about = defineCollection({
 const organizations = defineCollection({
   loader: glob({ pattern: 'organizations.md', base: './src/content/organizations' }),
   schema: z.object({
+    tag: z.string(),
     title: z.string(),
-    bullets: z.array(z.object({ text: z.string() })),
+    intro: z.string(),
+    benefits: z.array(z.object({ title: z.string(), description: z.string() })),
+    closing: z.string(),
   }),
 });
 
