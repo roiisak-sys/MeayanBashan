@@ -15,6 +15,15 @@ const testimonials = await getCollection('testimonials');
         </blockquote>
       ))}
     </div>
+    <div class="testimonial-video">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/rxPRA4RouCs"
+        title="המלצות משתתפים - מעיין בשן"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
   </section>
 )}
 <style>
@@ -57,5 +66,21 @@ const testimonials = await getCollection('testimonials');
   }
   @media (max-width: 640px) {
     .tilt-l, .tilt-r { transform: none; }
+  }
+
+  .testimonial-video {
+    max-width: 760px;
+    margin: 2.5rem auto 0;
+    border: 3px solid var(--ink);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: var(--shadow-hard);
+    background: var(--ink);
+  }
+  .testimonial-video iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
   }
 </style>

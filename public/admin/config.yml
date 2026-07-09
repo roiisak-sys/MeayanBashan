@@ -32,7 +32,7 @@ collections:
           - {label: "כותרת", name: "title", widget: "string"}
           - {label: "תוכן", name: "body", widget: "markdown"}
   - name: "media"
-    label: "תקשורת"
+    label: "מהמדיה"
     folder: "src/content/media"
     create: true
     slug: "{{slug}}"
@@ -41,10 +41,11 @@ collections:
       - label: "קטגוריה"
         name: "category"
         widget: "select"
+        hint: 'פודקאסט = פרקי "ניתוח גוף פתוח", טלוויזיה = אזכורים בטלוויזיה, עיתונות = כתבות ופינות בעיתונות/אתרים'
         options:
+          - {label: 'פודקאסט "ניתוח גוף פתוח"', value: "podcast"}
           - {label: "טלוויזיה", value: "tv"}
-          - {label: "פודקאסט", value: "podcast"}
-          - {label: "כתבה/פינה", value: "article"}
+          - {label: "עיתונות", value: "article"}
           - {label: "אחר", value: "other"}
       - {label: "תאריך", name: "date", widget: "datetime"}
       - {label: "קישור חיצוני", name: "url", widget: "string"}

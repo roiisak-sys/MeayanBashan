@@ -6,13 +6,6 @@ const mediaItems = (await getCollection('media')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
 );
 
-const categoryLabels: Record<string, string> = {
-  tv: 'טלוויזיה',
-  podcast: 'פודקאסטים',
-  article: 'כתבות ופינות',
-  other: 'אחר',
-};
-
 // When no image was uploaded, derive a thumbnail from YouTube links automatically
 function youtubeThumbnail(url: string): string | null {
   const match = url.match(
@@ -24,45 +17,69 @@ function youtubeThumbnail(url: string): string | null {
 function cardImage(item: (typeof mediaItems)[number]): string | null {
   return item.data.image ?? youtubeThumbnail(item.data.url);
 }
+
+const sections = [
+  {
+    key: 'podcast',
+    eyebrowClass: 'eyebrow-orange',
+    title: 'פודקאסט "ניתוח גוף פתוח"',
+    items: mediaItems.filter((i) => i.data.category === 'podcast'),
+  },
+  {
+    key: 'tv',
+    eyebrowClass: '',
+    title: 'טלוויזיה',
+    items: mediaItems.filter((i) => i.data.category === 'tv'),
+  },
+  {
+    key: 'article',
+    eyebrowClass: 'eyebrow-orange',
+    title: 'עיתונות',
+    items: mediaItems.filter((i) => i.data.category === 'article'),
+  },
+  {
+    key: 'other',
+    eyebrowClass: '',
+    title: 'אחר',
+    items: mediaItems.filter((i) => i.data.category === 'other'),
+  },
+].filter((section) => section.items.length > 0);
 ---
-<BaseLayout title="תקשורת" description="אזכורים תקשורתיים של מעיין בשן">
-  <section class="media-page reveal">
+<BaseLayout title="מהמדיה" description="מעיין בשן מהמדיה - פודקאסט, טלוויזיה ועיתונות">
+  <section class="media-hero reveal">
     <span class="eyebrow">כפי שהופיעה</span>
-    <h1>ב<em class="marker">תקשורת</em></h1>
-    <div class="filters">
-      <button data-filter="all" class="active">הכל</button>
-      {Object.entries(categoryLabels).map(([key, label]) => (
-        <button data-filter={key}>{label}</button>
-      ))}
-    </div>
-    <div class="media-grid">
-      {mediaItems.map((item) => (
-        <a class="media-card" data-category={item.data.category} href={item.data.url} target="_blank" rel="noopener">
-          {cardImage(item) && <img src={cardImage(item)} alt={item.data.title} loading="lazy" />}
-          <span class="category-tag">{categoryLabels[item.data.category]}</span>
-          <h3>{item.data.title}</h3>
-          {item.data.description && <p>{item.data.description}</p>}
-        </a>
-      ))}
-    </div>
+    <h1>מ<em class="marker">המדיה</em></h1>
   </section>
+
+  {sections.map((section) => (
+    <section class="media-section reveal" id={section.key}>
+      <div class="media-inner">
+        <span class={`eyebrow ${section.eyebrowClass}`}>{section.title}</span>
+        <h2>{section.title}</h2>
+        <div class="media-grid">
+          {section.items.map((item) => (
+            <a class="media-card" href={item.data.url} target="_blank" rel="noopener">
+              {cardImage(item) && <img src={cardImage(item)} alt={item.data.title} loading="lazy" />}
+              <h3>{item.data.title}</h3>
+              {item.data.description && <p>{item.data.description}</p>}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
 </BaseLayout>
 <style>
-  .media-page { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; text-align: center; }
-  .media-page h1 { color: var(--color-teal); margin-bottom: 2rem; font-size: clamp(2rem, 4vw, 2.75rem); }
-  .filters { display: flex; justify-content: center; gap: 0.75rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
-  .filters button {
-    font-family: var(--font-display);
-    padding: 0.5rem 1.25rem;
-    border-radius: 999px;
-    border: 2px solid var(--color-teal);
-    background: var(--paper);
-    color: var(--color-teal);
-    font-weight: 700;
-    cursor: pointer;
-    transition: background 0.15s ease, color 0.15s ease;
-  }
-  .filters button.active { background: var(--color-teal); color: white; }
+  .media-hero { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem 1rem; text-align: center; }
+  .media-hero h1 { color: var(--color-teal); font-size: clamp(2.2rem, 5vw, 3rem); }
+  .media-hero .eyebrow { text-align: center; }
+
+  .media-section { padding: 3rem 2rem; }
+  .media-section:nth-of-type(odd) { background: var(--color-cream); }
+  .media-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+  .media-inner > .eyebrow { text-align: center; }
+  .media-inner h2 { color: var(--color-teal); margin-bottom: 2rem; font-size: clamp(1.5rem, 3.5vw, 2rem); }
+
   .media-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -73,7 +90,7 @@ function cardImage(item: (typeof mediaItems)[number]): string | null {
     display: block;
     padding: 1.1rem;
     border-radius: 4px 16px 16px 16px;
-    background: var(--color-cream);
+    background: var(--paper);
     text-decoration: none;
     color: var(--color-text);
     box-shadow: var(--shadow-hard);
@@ -84,28 +101,6 @@ function cardImage(item: (typeof mediaItems)[number]): string | null {
     box-shadow: 0.8rem 0.8rem 0 rgba(15, 50, 41, 0.2);
   }
   .media-card img { width: 100%; border-radius: 8px; margin-bottom: 0.75rem; aspect-ratio: 16/9; object-fit: cover; }
-  .media-card h3 { font-size: 1.1rem; margin: 0.3rem 0; }
-  .category-tag {
-    display: inline-block;
-    font-family: var(--font-serif);
-    font-size: 0.75rem;
-    color: var(--color-red);
-    font-weight: 700;
-  }
+  .media-card h3 { font-size: 1.05rem; margin: 0.2rem 0; }
+  .media-card p { margin: 0.4rem 0 0; font-size: 0.9rem; opacity: 0.8; }
 </style>
-<script>
-  const buttons = document.querySelectorAll<HTMLButtonElement>('.filters button');
-  const cards = document.querySelectorAll<HTMLElement>('.media-card');
-
-  buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-      buttons.forEach((b) => b.classList.remove('active'));
-      button.classList.add('active');
-      const filter = button.dataset.filter;
-      cards.forEach((card) => {
-        const show = filter === 'all' || card.dataset.category === filter;
-        card.style.display = show ? 'block' : 'none';
-      });
-    });
-  });
-</script>
