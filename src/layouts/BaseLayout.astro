@@ -1,6 +1,7 @@
 ---
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import FloatingWhatsApp from '../components/FloatingWhatsApp.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -27,6 +28,7 @@ const { title, description = 'מעיין בשן - מומחית שפת גוף' } 
       <slot />
     </main>
     <Footer />
+    <FloatingWhatsApp />
     <script is:inline src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script is:inline>
       if (window.netlifyIdentity) {

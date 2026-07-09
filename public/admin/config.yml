@@ -22,6 +22,9 @@ collections:
           - {label: "אינסטגרם", name: "instagram", widget: "string", required: false}
           - {label: "טיקטוק", name: "tiktok", widget: "string", required: false}
           - {label: "פייסבוק", name: "facebook", widget: "string", required: false}
+          - {label: "יוטיוב", name: "youtube", widget: "string", required: false}
+          - {label: "ספוטיפיי", name: "spotify", widget: "string", required: false}
+          - {label: "וואטסאפ (קישור מלא, לדוגמה https://wa.me/972501234567)", name: "whatsapp", widget: "string", required: false}
   - name: "about"
     label: "אודות"
     files:

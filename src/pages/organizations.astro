@@ -4,6 +4,7 @@ import PartnerLogos from '../components/PartnerLogos.astro';
 import { getEntry } from 'astro:content';
 
 const org = await getEntry('organizations', 'organizations');
+const settings = await getEntry('settings', 'settings');
 ---
 <BaseLayout title="ארגונים" description="הרצאות וסדנאות לארגונים וחברות">
   <section class="organizations-page reveal">
@@ -31,6 +32,11 @@ const org = await getEntry('organizations', 'organizations');
     <div class="form-wrap">
       <span class="eyebrow">בואו נתאים לכם תוכנית</span>
       <h2>מעוניינים לארגון שלכם?</h2>
+      {settings?.data.whatsapp && (
+        <a class="btn btn-teal whatsapp-cta" href={settings.data.whatsapp} target="_blank" rel="noopener">
+          לשיחה מהירה בוואטסאפ ←
+        </a>
+      )}
       <form name="business-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="business-contact" />
         <p class="hidden-field"><label>אל תמלאו שדה זה: <input name="bot-field" /></label></p>
@@ -102,7 +108,8 @@ const org = await getEntry('organizations', 'organizations');
     text-align: center;
   }
   .form-wrap .eyebrow { text-align: center; }
-  .form-wrap h2 { color: var(--color-teal); margin-bottom: 1.75rem; }
+  .form-wrap h2 { color: var(--color-teal); margin-bottom: 1.25rem; }
+  .whatsapp-cta { display: inline-block; margin-bottom: 1.75rem; background: #25d366; color: white; }
   form { display: flex; flex-direction: column; gap: 1.1rem; text-align: start; }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
   label { display: flex; flex-direction: column; gap: 0.35rem; font-weight: 700; font-size: 0.95rem; }

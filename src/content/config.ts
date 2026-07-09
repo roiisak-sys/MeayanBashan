@@ -13,6 +13,9 @@ const settings = defineCollection({
     instagram: z.string().optional(),
     tiktok: z.string().optional(),
     facebook: z.string().optional(),
+    youtube: z.string().optional(),
+    spotify: z.string().optional(),
+    whatsapp: z.string().optional(),
   }),
 });
 

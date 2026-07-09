@@ -13,6 +13,11 @@ const settings = await getEntry('settings', 'settings');
       <div class="contact-info">
         <p>טלפון: <a href={`tel:${settings?.data.phone}`}>{settings?.data.phone}</a></p>
         <p>מייל: <a href={`mailto:${settings?.data.email}`}>{settings?.data.email}</a></p>
+        {settings?.data.whatsapp && (
+          <a class="btn btn-teal whatsapp-cta" href={settings.data.whatsapp} target="_blank" rel="noopener">
+            שליחת הודעת וואטסאפ ←
+          </a>
+        )}
         <div class="socials">
           <SocialIcons />
         </div>
@@ -47,6 +52,7 @@ const settings = await getEntry('settings', 'settings');
   .form-wrap h1 { color: var(--color-teal); font-size: clamp(1.9rem, 4vw, 2.4rem); margin-bottom: 1.5rem; }
   .contact-info { margin-bottom: 2rem; }
   .contact-info a { font-weight: 700; color: var(--color-teal); }
+  .whatsapp-cta { display: inline-block; margin: 1rem 0 0.5rem; background: #25d366; color: white; }
   .socials { margin-top: 0.85rem; color: var(--color-teal); }
   form { display: flex; flex-direction: column; gap: 1.1rem; text-align: start; }
   label { display: flex; flex-direction: column; gap: 0.35rem; font-weight: 700; font-size: 0.95rem; }
