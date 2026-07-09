@@ -64,7 +64,7 @@ const faqs = [
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&family=Heebo:wght@700;800;900&display=swap" rel="stylesheet" />
   </head>
   <body>
     <nav class="lp-nav">
@@ -94,6 +94,22 @@ const faqs = [
       </div>
       <div class="lp-hero-image">
         <img src="/images/maayan-hero.png" alt="מעיין בשן" />
+      </div>
+    </section>
+
+    <section class="lp-section lp-video-section">
+      <div class="lp-inner lp-center">
+        <div class="lp-eyebrow">רגע לפני שממשיכים</div>
+        <h2>הכירו את מעיין — בדקה וחצי</h2>
+        <div class="lp-video">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/aRz4WRds2rE"
+            title="סרטון פתיחה - מעיין בשן"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
       </div>
     </section>
 
@@ -162,10 +178,6 @@ const faqs = [
             <div class="lp-meta-item">
               <span class="lp-emoji">📍</span>
               <div><h4>מיקום</h4><p>הרצליה — חניה חינם, מרחב נעים ומרווח</p></div>
-            </div>
-            <div class="lp-meta-item">
-              <span class="lp-emoji">💻</span>
-              <div><h4>גם בזום</h4><p>אפשרות להצטרף מרחוק במחיר מיוחד</p></div>
             </div>
             <div class="lp-meta-item">
               <span class="lp-emoji">👥</span>
@@ -244,6 +256,22 @@ const faqs = [
       </div>
     </section>
 
+    <section class="lp-section lp-video-section">
+      <div class="lp-inner lp-center">
+        <div class="lp-eyebrow">מה אומרים המשתתפים</div>
+        <h2>אל תאמינו לנו — תאמינו להם</h2>
+        <div class="lp-video">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/rxPRA4RouCs"
+            title="המלצות משתתפים - מעיין בשן"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
     <section class="lp-section" id="register">
       <div class="lp-inner">
         <div class="lp-form-wrap">
@@ -299,6 +327,29 @@ const faqs = [
 </html>
 
 <style>
+  .lp-hero h1,
+  .lp-section h2,
+  .lp-section h3,
+  .lp-section h4,
+  .lp-instant h3 {
+    font-family: 'Heebo', 'Assistant', sans-serif;
+  }
+
+  .lp-video-section { padding-top: 3rem; padding-bottom: 3rem; }
+  .lp-video {
+    max-width: 760px;
+    margin: 1.5rem auto 0;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
+  }
+  .lp-video iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+  }
+
   .lp-nav {
     position: sticky;
     top: 0;
@@ -548,6 +599,7 @@ const faqs = [
     font-family: inherit;
   }
   .lp-form-wrap button {
+    font-family: inherit;
     padding: 0.9rem;
     background: var(--color-orange);
     color: var(--color-text);
