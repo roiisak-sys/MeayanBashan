@@ -3,42 +3,87 @@ import { getEntry } from 'astro:content';
 const settings = await getEntry('settings', 'settings');
 ---
 <section class="hero">
+  <div class="hero-shapes" aria-hidden="true">
+    <span class="shape shape-ring"></span>
+    <span class="shape shape-blob"></span>
+    <span class="shape shape-dot-grid"></span>
+  </div>
   <div class="hero-text">
+    <span class="eyebrow eyebrow-orange">✦ מעיין בשן · מומחית שפת גוף</span>
     <h1>{settings?.data.tagline}</h1>
     <p>{settings?.data.shortBio}</p>
-    <a class="cta" href="/contact">בואו נדבר</a>
+    <a class="btn btn-orange" href="/contact">בואו נדבר ←</a>
   </div>
   {settings?.data.heroImage && (
     <div class="hero-image">
+      <span class="hero-halo" aria-hidden="true"></span>
       <img src={settings.data.heroImage} alt="מעיין בשן" />
     </div>
   )}
 </section>
 <style>
   .hero {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
-    padding: 3rem 2rem;
-    background: var(--color-cream);
+    padding: 4rem 2rem;
+    background-color: var(--ink);
+    background-image:
+      var(--grain),
+      radial-gradient(ellipse 900px 600px at 85% 20%, rgba(23, 131, 106, 0.35), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 10% 90%, rgba(244, 175, 67, 0.12), transparent 60%);
+    color: var(--paper);
+    overflow: hidden;
   }
-  .hero-text { max-width: 480px; }
-  .hero-text h1 { font-size: 2.25rem; color: var(--color-teal); }
-  .cta {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.75rem 1.5rem;
-    background: var(--color-orange);
-    color: var(--color-text);
-    text-decoration: none;
-    border-radius: 999px;
-    font-weight: 700;
+  .hero-shapes .shape { position: absolute; pointer-events: none; }
+  .shape-ring {
+    inset-inline-start: -80px;
+    top: -80px;
+    width: 240px;
+    height: 240px;
+    border: 2px dashed rgba(244, 175, 67, 0.3);
+    border-radius: 50%;
+    animation: spin 50s linear infinite;
+  }
+  .shape-blob {
+    inset-inline-end: -60px;
+    bottom: -100px;
+    width: 280px;
+    height: 280px;
+    background: rgba(219, 52, 41, 0.16);
+    border-radius: 62% 38% 46% 54% / 60% 45% 55% 40%;
+  }
+  .shape-dot-grid {
+    inset-inline-start: 6%;
+    bottom: 10%;
+    width: 110px;
+    height: 80px;
+    background-image: radial-gradient(rgba(251, 244, 231, 0.3) 1.5px, transparent 1.5px);
+    background-size: 15px 15px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .hero-text { max-width: 520px; position: relative; z-index: 2; }
+  .hero-text h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); margin: 0.5rem 0 1rem; }
+  .hero-text p { font-size: 1.1rem; color: rgba(251, 244, 231, 0.75); margin-bottom: 1.75rem; }
+
+  .hero-image { position: relative; z-index: 2; }
+  .hero-halo {
+    position: absolute;
+    inset: -18px;
+    border: 2px dashed rgba(244, 175, 67, 0.4);
+    border-radius: 50%;
+    animation: spin 40s linear infinite reverse;
   }
   .hero-image img {
-    max-width: min(380px, 100%);
+    max-width: min(360px, 100%);
+    position: relative;
+    filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.4));
   }
   @media (max-width: 768px) {
-    .hero { flex-direction: column; text-align: center; }
+    .hero { flex-direction: column; text-align: center; padding: 3.25rem 1.5rem; }
+    .hero-text p { margin-inline: auto; }
   }
 </style>

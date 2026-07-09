@@ -6,12 +6,11 @@ const links = [
   { href: '/courses', label: 'הרצאות וקורסים' },
   { href: '/organizations', label: 'ארגונים' },
   { href: '/#testimonials', label: 'המלצות' },
-  { href: '/contact', label: 'צור קשר' },
 ];
 ---
 <header class="site-nav">
   <a href="/" class="brand">
-    <img src="/images/logo-teal.png" alt="מעיין בשן" />
+    <img src="/images/logo-white.png" alt="מעיין בשן" />
   </a>
   <button class="menu-toggle" aria-label="תפריט" aria-expanded="false" aria-controls="site-menu">
     <span></span>
@@ -24,23 +23,28 @@ const links = [
         <li><a href={link.href}>{link.label}</a></li>
       ))}
     </ul>
+    <a href="/contact" class="nav-cta">צור קשר</a>
   </nav>
 </header>
 <style>
   .site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
-    background: var(--color-cream);
-    position: relative;
+    padding: 0.85rem 2rem;
+    background: rgba(10, 37, 30, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(244, 175, 67, 0.25);
   }
   .brand {
     display: inline-flex;
     align-items: center;
   }
   .brand img {
-    height: 30px;
+    height: 28px;
     width: auto;
     max-width: 100%;
     object-fit: contain;
@@ -62,7 +66,7 @@ const links = [
     height: 3px;
     width: 100%;
     border-radius: 2px;
-    background: var(--color-teal);
+    background: var(--color-orange);
     transition: transform 0.2s ease, opacity 0.2s ease;
   }
   .site-nav.open .menu-toggle span:nth-child(1) {
@@ -74,6 +78,11 @@ const links = [
   .site-nav.open .menu-toggle span:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+  }
   nav ul {
     display: flex;
     gap: 1.5rem;
@@ -81,13 +90,41 @@ const links = [
     margin: 0;
     padding: 0;
   }
-  nav a {
-    color: var(--color-text);
+  nav ul a {
+    color: var(--paper);
     text-decoration: none;
     font-weight: 600;
+    font-size: 0.95rem;
+    position: relative;
   }
-  nav a:hover {
-    color: var(--color-orange);
+  nav ul a::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: var(--color-orange);
+    transition: width 0.2s ease;
+  }
+  nav ul a:hover::after {
+    width: 100%;
+  }
+  .nav-cta {
+    background: var(--color-orange);
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.88rem;
+    padding: 0.5rem 1.25rem;
+    border-radius: 999px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .nav-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(244, 175, 67, 0.4);
   }
   @media (max-width: 768px) {
     .menu-toggle { display: flex; }
@@ -97,19 +134,28 @@ const links = [
       top: 100%;
       right: 0;
       left: 0;
-      background: var(--color-cream);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+      background: rgba(10, 37, 30, 0.97);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
       z-index: 10;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      padding: 0.5rem 0 1rem;
     }
-    .site-nav.open nav { display: block; }
+    .site-nav.open nav { display: flex; }
     nav ul {
       flex-direction: column;
       gap: 0;
-      padding: 0.5rem 0;
     }
-    nav li a {
+    nav ul li a {
       display: block;
       padding: 0.85rem 2rem;
+    }
+    nav ul a::after { display: none; }
+    .nav-cta {
+      margin: 0.5rem 2rem 0;
+      text-align: center;
     }
     .brand img { height: 24px; }
   }

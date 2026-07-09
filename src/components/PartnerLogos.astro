@@ -3,8 +3,8 @@ import { getCollection } from 'astro:content';
 const logos = await getCollection('partner_logos');
 ---
 {logos.length > 0 && (
-  <section class="partner-logos">
-    <h2>כפי שהופיעה ב</h2>
+  <section class="partner-logos section-ink">
+    <span class="eyebrow eyebrow-orange">כפי שהופיעה ב</span>
     <div class="logos-grid">
       {logos.map((logo) => (
         <img src={logo.data.logo} alt={logo.data.name} loading="lazy" />
@@ -14,11 +14,10 @@ const logos = await getCollection('partner_logos');
 )}
 <style>
   .partner-logos {
-    padding: 2rem;
+    padding: 2.5rem 2rem;
     text-align: center;
-    background: #1c1c1c;
   }
-  .partner-logos h2 { color: white; margin-bottom: 1.5rem; font-size: 1.1rem; }
+  .partner-logos .eyebrow { text-align: center; margin-bottom: 1.5rem; font-size: 1rem; }
   .logos-grid {
     display: flex;
     flex-wrap: wrap;

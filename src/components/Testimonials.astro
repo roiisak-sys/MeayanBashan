@@ -3,11 +3,13 @@ import { getCollection } from 'astro:content';
 const testimonials = await getCollection('testimonials');
 ---
 {testimonials.length > 0 && (
-  <section class="testimonials" id="testimonials">
-    <h2>מה אומרים עליי</h2>
+  <section class="testimonials reveal" id="testimonials">
+    <span class="eyebrow">מה אומרים עליי</span>
+    <h2>אל תאמינו לנו — <em class="marker">תאמינו להם</em></h2>
     <div class="testimonials-grid">
-      {testimonials.map((t) => (
-        <blockquote>
+      {testimonials.map((t, i) => (
+        <blockquote class={i % 2 ? 'tilt-r' : 'tilt-l'}>
+          <span class="quote-mark" aria-hidden="true">"</span>
           <p>{t.data.quote}</p>
           <cite>— {t.data.author}</cite>
         </blockquote>
@@ -16,20 +18,44 @@ const testimonials = await getCollection('testimonials');
   </section>
 )}
 <style>
-  .testimonials { padding: 3rem 2rem; background: white; text-align: center; }
-  .testimonials h2 { color: var(--color-teal); margin-bottom: 2rem; }
+  .testimonials { padding: 4rem 2rem; background: var(--paper); text-align: center; }
+  .testimonials h2 { color: var(--color-teal); margin-bottom: 2.5rem; font-size: clamp(1.6rem, 4vw, 2.2rem); }
   .testimonials-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.5rem;
+    gap: 1.75rem;
     max-width: 960px;
     margin: 0 auto;
   }
   blockquote {
+    position: relative;
     margin: 0;
-    padding: 1.5rem;
+    padding: 1.75rem 1.5rem 1.5rem;
     background: var(--color-cream);
-    border-radius: 12px;
+    border-radius: 4px 16px 16px 16px;
+    box-shadow: var(--shadow-hard);
+    text-align: start;
   }
-  cite { display: block; margin-top: 0.75rem; font-weight: 700; color: var(--color-orange); font-style: normal; }
+  .tilt-l { transform: rotate(-1deg); }
+  .tilt-r { transform: rotate(1deg); }
+  .quote-mark {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    line-height: 0.6;
+    color: var(--color-orange);
+    margin-bottom: 0.75rem;
+  }
+  blockquote p { margin: 0; line-height: 1.6; }
+  cite {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 700;
+    font-family: var(--font-display);
+    color: var(--color-red);
+    font-style: normal;
+  }
+  @media (max-width: 640px) {
+    .tilt-l, .tilt-r { transform: none; }
+  }
 </style>

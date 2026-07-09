@@ -6,50 +6,69 @@ import { getEntry } from 'astro:content';
 const settings = await getEntry('settings', 'settings');
 ---
 <BaseLayout title="צור קשר" description="יצירת קשר עם מעיין בשן">
-  <section class="contact-page">
-    <h1>בואו נדבר</h1>
-    <div class="contact-info">
-      <p>טלפון: <a href={`tel:${settings?.data.phone}`}>{settings?.data.phone}</a></p>
-      <p>מייל: <a href={`mailto:${settings?.data.email}`}>{settings?.data.email}</a></p>
-      <div class="socials">
-        <SocialIcons />
+  <section class="contact-page reveal">
+    <div class="form-wrap">
+      <span class="eyebrow">בואו נדבר</span>
+      <h1>יצירת קשר</h1>
+      <div class="contact-info">
+        <p>טלפון: <a href={`tel:${settings?.data.phone}`}>{settings?.data.phone}</a></p>
+        <p>מייל: <a href={`mailto:${settings?.data.email}`}>{settings?.data.email}</a></p>
+        <div class="socials">
+          <SocialIcons />
+        </div>
       </div>
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact" />
+        <p class="hidden-field"><label>אל תמלאו שדה זה: <input name="bot-field" /></label></p>
+        <label>שם מלא<input type="text" name="name" required /></label>
+        <label>טלפון<input type="tel" name="phone" required /></label>
+        <label>מייל<input type="email" name="email" required /></label>
+        <label>הודעה<textarea name="message" rows="4" required></textarea></label>
+        <button type="submit" class="btn btn-teal">שליחה ←</button>
+      </form>
+      <p class="form-success" hidden>תודה! ההודעה נשלחה בהצלחה, נחזור אליכם בהקדם.</p>
+      <p class="form-error" hidden>משהו השתבש. נסו שוב או צרו קשר ישירות בטלפון/במייל.</p>
     </div>
-    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="contact" />
-      <p class="hidden-field"><label>אל תמלאו שדה זה: <input name="bot-field" /></label></p>
-      <label>שם מלא<input type="text" name="name" required /></label>
-      <label>טלפון<input type="tel" name="phone" required /></label>
-      <label>מייל<input type="email" name="email" required /></label>
-      <label>הודעה<textarea name="message" rows="4" required></textarea></label>
-      <button type="submit">שליחה</button>
-    </form>
-    <p class="form-success" hidden>תודה! ההודעה נשלחה בהצלחה, נחזור אליכם בהקדם.</p>
-    <p class="form-error" hidden>משהו השתבש. נסו שוב או צרו קשר ישירות בטלפון/במייל.</p>
   </section>
 </BaseLayout>
 <style>
-  .contact-page { max-width: 640px; margin: 0 auto; padding: 3rem 2rem; }
-  .contact-page h1 { color: var(--color-teal); text-align: center; }
-  .contact-info { text-align: center; margin-bottom: 2rem; }
-  .socials { margin-top: 0.75rem; color: var(--color-teal); }
-  form { display: flex; flex-direction: column; gap: 1rem; }
-  label { display: flex; flex-direction: column; gap: 0.35rem; font-weight: 600; }
-  input, textarea { padding: 0.6rem; border-radius: 8px; border: 1px solid #ccc; font-family: inherit; }
-  .hidden-field { display: none; }
-  button[type="submit"] {
-    padding: 0.75rem;
-    background: var(--color-teal);
-    color: white;
-    border: none;
-    border-radius: 999px;
-    font-weight: 700;
-    cursor: pointer;
+  .contact-page { padding: 4rem 2rem; }
+  .form-wrap {
+    max-width: 580px;
+    margin: 0 auto;
+    background: var(--paper);
+    border: 3px solid var(--ink);
+    border-radius: 20px;
+    padding: 2.75rem 2.25rem;
+    box-shadow: 0.6rem 0.6rem 0 var(--color-teal);
+    text-align: center;
   }
-  .form-success, .form-error { text-align: center; font-weight: 600; }
+  .form-wrap .eyebrow { text-align: center; }
+  .form-wrap h1 { color: var(--color-teal); font-size: clamp(1.9rem, 4vw, 2.4rem); margin-bottom: 1.5rem; }
+  .contact-info { margin-bottom: 2rem; }
+  .contact-info a { font-weight: 700; color: var(--color-teal); }
+  .socials { margin-top: 0.85rem; color: var(--color-teal); }
+  form { display: flex; flex-direction: column; gap: 1.1rem; text-align: start; }
+  label { display: flex; flex-direction: column; gap: 0.35rem; font-weight: 700; font-size: 0.95rem; }
+  input, textarea {
+    padding: 0.7rem;
+    border-radius: 10px;
+    border: 2px solid rgba(15, 50, 41, 0.25);
+    font-family: inherit;
+    font-size: 1rem;
+    background: var(--color-cream);
+    transition: border-color 0.15s ease;
+  }
+  input:focus, textarea:focus { outline: none; border-color: var(--color-teal); }
+  .hidden-field { display: none; }
+  button[type="submit"] { align-self: center; margin-top: 0.5rem; }
+  .form-success, .form-error { text-align: center; font-weight: 700; margin-top: 1.25rem; }
   .form-success { color: var(--color-teal); }
   .form-error { color: var(--color-red); }
   [hidden] { display: none; }
+  @media (max-width: 560px) {
+    .form-wrap { padding: 2rem 1.5rem; }
+  }
 </style>
 <script>
   const form = document.querySelector<HTMLFormElement>('form[name="contact"]');

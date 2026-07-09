@@ -26,8 +26,9 @@ function cardImage(item: (typeof mediaItems)[number]): string | null {
 }
 ---
 <BaseLayout title="תקשורת" description="אזכורים תקשורתיים של מעיין בשן">
-  <section class="media-page">
-    <h1>תקשורת</h1>
+  <section class="media-page reveal">
+    <span class="eyebrow">כפי שהופיעה</span>
+    <h1>ב<em class="marker">תקשורת</em></h1>
     <div class="filters">
       <button data-filter="all" class="active">הכל</button>
       {Object.entries(categoryLabels).map(([key, label]) => (
@@ -47,34 +48,50 @@ function cardImage(item: (typeof mediaItems)[number]): string | null {
   </section>
 </BaseLayout>
 <style>
-  .media-page { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem; }
-  .media-page h1 { color: var(--color-teal); text-align: center; margin-bottom: 2rem; }
-  .filters { display: flex; justify-content: center; gap: 0.75rem; margin-bottom: 2rem; flex-wrap: wrap; }
+  .media-page { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; text-align: center; }
+  .media-page h1 { color: var(--color-teal); margin-bottom: 2rem; font-size: clamp(2rem, 4vw, 2.75rem); }
+  .filters { display: flex; justify-content: center; gap: 0.75rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
   .filters button {
+    font-family: var(--font-display);
     padding: 0.5rem 1.25rem;
     border-radius: 999px;
     border: 2px solid var(--color-teal);
-    background: white;
+    background: var(--paper);
     color: var(--color-teal);
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
   }
   .filters button.active { background: var(--color-teal); color: white; }
   .media-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 1.5rem;
+    gap: 1.75rem;
+    text-align: start;
   }
   .media-card {
     display: block;
-    padding: 1rem;
-    border-radius: 12px;
+    padding: 1.1rem;
+    border-radius: 4px 16px 16px 16px;
     background: var(--color-cream);
     text-decoration: none;
     color: var(--color-text);
+    box-shadow: var(--shadow-hard);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
   }
-  .media-card img { width: 100%; border-radius: 8px; margin-bottom: 0.75rem; }
-  .category-tag { font-size: 0.75rem; color: var(--color-orange); font-weight: 700; }
+  .media-card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 0.8rem 0.8rem 0 rgba(15, 50, 41, 0.2);
+  }
+  .media-card img { width: 100%; border-radius: 8px; margin-bottom: 0.75rem; aspect-ratio: 16/9; object-fit: cover; }
+  .media-card h3 { font-size: 1.1rem; margin: 0.3rem 0; }
+  .category-tag {
+    display: inline-block;
+    font-family: var(--font-serif);
+    font-size: 0.75rem;
+    color: var(--color-red);
+    font-weight: 700;
+  }
 </style>
 <script>
   const buttons = document.querySelectorAll<HTMLButtonElement>('.filters button');

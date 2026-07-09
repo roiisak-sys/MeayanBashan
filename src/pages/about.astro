@@ -6,7 +6,8 @@ const about = await getEntry('about', 'about');
 const { Content } = about ? await render(about) : { Content: null };
 ---
 <BaseLayout title="אודות" description="קצת עליי - מעיין בשן, מומחית שפת גוף">
-  <section class="about-page">
+  <section class="about-page reveal">
+    <span class="eyebrow">הסיפור שמאחורי השיטה</span>
     <h1>{about?.data.title}</h1>
     <div class="content">
       {Content && <Content />}
@@ -14,7 +15,14 @@ const { Content } = about ? await render(about) : { Content: null };
   </section>
 </BaseLayout>
 <style>
-  .about-page { max-width: 720px; margin: 0 auto; padding: 3rem 2rem; }
-  .about-page h1 { color: var(--color-teal); }
-  .content :global(p) { line-height: 1.8; margin-bottom: 1rem; }
+  .about-page { max-width: 720px; margin: 0 auto; padding: 4rem 2rem; }
+  .about-page h1 { color: var(--color-teal); font-size: clamp(2rem, 4vw, 2.75rem); margin-bottom: 1.5rem; }
+  .content :global(p) { line-height: 1.85; margin-bottom: 1.1rem; font-size: 1.05rem; }
+  .content :global(img) {
+    margin: 0 auto 2rem;
+    max-width: 280px;
+    border: 3px solid var(--ink);
+    border-radius: 50%;
+    box-shadow: var(--shadow-hard);
+  }
 </style>

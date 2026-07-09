@@ -12,25 +12,32 @@ const featuredCourse = courses.find((c) => c.data.featured) ?? courses[0];
 <BaseLayout title="בית">
   <Hero />
   <PartnerLogos />
-  <section class="about-teaser">
-    <h2>קצת עליי</h2>
+  <section class="about-teaser reveal">
+    <span class="eyebrow">קצת עליי</span>
+    <h2>סיפור אחד, <em class="marker-soft">שתי צלקות</em>, ושיטה שלמה</h2>
     <p>{settings?.data.shortBio}</p>
-    <a href="/about">לקריאת הסיפור המלא</a>
+    <a class="btn btn-teal" href="/about">לקריאת הסיפור המלא ←</a>
   </section>
   {featuredCourse && (
-    <section class="course-teaser">
-      <h2>הרצאה קרובה</h2>
-      <h3>{featuredCourse.data.title}</h3>
-      <a href="/courses">לכל ההרצאות והקורסים</a>
+    <section class="course-teaser reveal">
+      <span class="eyebrow eyebrow-orange">הרצאה קרובה</span>
+      <h2>{featuredCourse.data.title}</h2>
+      <a class="btn btn-orange" href="/courses">לכל ההרצאות והקורסים ←</a>
     </section>
   )}
   <Testimonials />
 </BaseLayout>
 <style>
   .about-teaser, .course-teaser {
-    padding: 2.5rem 2rem;
+    padding: 4rem 2rem;
     text-align: center;
   }
-  .about-teaser { background: white; }
-  .course-teaser { background: var(--color-cream); }
+  .about-teaser { background: var(--color-cream); }
+  .about-teaser p { max-width: 640px; margin: 0 auto 1.75rem; font-size: 1.05rem; }
+  .course-teaser {
+    background-color: var(--ink);
+    background-image: var(--grain);
+    color: var(--paper);
+  }
+  .course-teaser h2 { color: var(--paper); max-width: 640px; margin: 0.5rem auto 1.75rem; }
 </style>
