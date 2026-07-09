@@ -47,6 +47,28 @@ export default async (request) => {
 
   const courseRecordId = process.env.COURSE_RECORD_ID || DEFAULT_COURSE_RECORD_ID;
 
+  // Dedupe guard: if this phone number already submitted in the last 10
+  // minutes (double-click, double-tap, or a retried request), don't create
+  // a second lead — just acknowledge success.
+  const normalizedPhone = phone.replace(/\D/g, '');
+  if (normalizedPhone) {
+    const dedupeFormula = `AND(REGEX_REPLACE({Phone}, "[^0-9]", "") = "${normalizedPhone}", DATETIME_DIFF(NOW(), CREATED_TIME(), "minutes") < 10)`;
+    const dedupeUrl = `https://api.airtable.com/v0/${BASE_ID}/${LEADS_TABLE_ID}?maxRecords=1&filterByFormula=${encodeURIComponent(dedupeFormula)}`;
+    const dedupeResponse = await fetch(dedupeUrl, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    if (dedupeResponse.ok) {
+      const dedupeData = await dedupeResponse.json();
+      if (dedupeData.records?.length > 0) {
+        return Response.json({ ok: true, duplicate: true });
+      }
+    } else {
+      console.error('Airtable dedupe check failed', dedupeResponse.status, await dedupeResponse.text());
+      // Fall through and create the lead — a failed dedupe check should
+      // never block a genuine registration.
+    }
+  }
+
   const airtableResponse = await fetch(
     `https://api.airtable.com/v0/${BASE_ID}/${LEADS_TABLE_ID}`,
     {

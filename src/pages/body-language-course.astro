@@ -338,10 +338,19 @@ const faqs = [
 
     <script is:inline>
       const form = document.querySelector('form[name="course-registration"]');
+      const submitButton = form?.querySelector('button[type="submit"]');
       const successMessage = document.querySelector('.lp-form-success');
       const errorMessage = document.querySelector('.lp-form-error');
+      let isSubmitting = false;
       form?.addEventListener('submit', (event) => {
         event.preventDefault();
+        if (isSubmitting) return; // guard against double-click / double-tap
+        isSubmitting = true;
+        if (submitButton) {
+          submitButton.disabled = true;
+          submitButton.dataset.originalText = submitButton.textContent ?? '';
+          submitButton.textContent = 'שולח...';
+        }
         errorMessage?.setAttribute('hidden', '');
         const formData = new FormData(form);
         const encode = Array.from(formData.entries())
@@ -373,6 +382,11 @@ const faqs = [
             successMessage?.removeAttribute('hidden');
           } else {
             errorMessage?.removeAttribute('hidden');
+            isSubmitting = false;
+            if (submitButton) {
+              submitButton.disabled = false;
+              submitButton.textContent = submitButton.dataset.originalText ?? submitButton.textContent;
+            }
           }
         });
       });
