@@ -7,20 +7,70 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  keywords?: string;
+  ogImage?: string;
 }
-const { title, description = 'מעיין בשן - מומחית שפת גוף' } = Astro.props;
+const {
+  title,
+  description = 'מעיין בשן - מומחית שפת גוף, מרצה ופרשנית תקשורת לא מילולית. הרצאות, קורסים ופודקאסט "ניתוח גוף פתוח".',
+  keywords = 'מעיין בשן, מעין בשן, שפת גוף, שפתגוף, ניתוח גוף פתוח, מומחית שפת גוף, קריאת שפת גוף, זיהוי שקרים, חתונמי',
+  ogImage = '/images/maayan-hero.png',
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL(ogImage, Astro.site);
+const isHome = Astro.url.pathname === '/';
+const fullTitle = isHome ? title : `${title} | מעיין בשן - מומחית שפת גוף`;
 ---
 <!doctype html>
 <html lang="he" dir="rtl">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title} | מעיין בשן</title>
+    <title>{fullTitle}</title>
     <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="מעיין בשן" />
+    <link rel="canonical" href={canonicalURL} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Heebo:wght@700;800;900&family=Frank+Ruhl+Libre:wght@500;700;900&display=swap" rel="stylesheet" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:locale" content="he_IL" />
+    <meta property="og:site_name" content="מעיין בשן" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <!-- Structured data: Person -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Person',
+      name: 'מעיין בשן',
+      alternateName: ['מעין בשן', 'Maayan Bashan'],
+      jobTitle: 'מומחית שפת גוף',
+      description: 'מעיין בשן - מומחית שפת גוף, מרצה ופרשנית תקשורת לא מילולית, מנחת הפודקאסט "ניתוח גוף פתוח"',
+      url: 'https://maayanbashan.co.il',
+      image: ogImageURL.toString(),
+      sameAs: [
+        'https://www.instagram.com/maayan.bashan/',
+        'https://www.tiktok.com/@maayan.bashan',
+        'https://www.facebook.com/sfatgoof1/',
+        'https://www.youtube.com/@Maayan.bashan',
+        'https://open.spotify.com/show/03Rq0mo36Cz92l8sHh5ltL',
+      ],
+      knowsAbout: ['שפת גוף', 'תקשורת לא מילולית', 'ניתוח גוף פתוח', 'זיהוי שקרים'],
+    })} />
   </head>
   <body>
     <Nav />

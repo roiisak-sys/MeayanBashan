@@ -9,7 +9,10 @@ const settings = await getEntry('settings', 'settings');
 const courses = await getCollection('courses');
 const featuredCourse = courses.find((c) => c.data.featured) ?? courses[0];
 ---
-<BaseLayout title="בית">
+<BaseLayout
+  title="מעיין בשן - מומחית שפת גוף"
+  description='מעיין בשן (מעין בשן) - מומחית שפת גוף, מרצה ופרשנית תקשורת לא מילולית. הרצאות, קורסים ופודקאסט "ניתוח גוף פתוח".'
+>
   <Hero />
   <PartnerLogos />
   <section class="about-teaser reveal">

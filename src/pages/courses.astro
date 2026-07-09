@@ -7,7 +7,10 @@ const renderedCourses = await Promise.all(
   courses.map(async (course) => ({ course, Content: (await render(course)).Content }))
 );
 ---
-<BaseLayout title="הרצאות וקורסים" description="הרצאות וקורסים של מעיין בשן">
+<BaseLayout
+  title="הרצאות וקורסים בשפת גוף"
+  description='הרצאות, סדנאות וקורסי שפת גוף עם מעיין בשן (מעין בשן) - כולל קורס "ניתוח גוף פתוח" ללימוד קריאת שפת גוף וזיהוי שקרים.'
+>
   <section class="courses-page reveal">
     <span class="eyebrow">מה מעיין מלמדת</span>
     <h1>הרצאות <em class="marker">וקורסים</em></h1>

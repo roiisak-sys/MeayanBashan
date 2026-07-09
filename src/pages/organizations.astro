@@ -6,7 +6,10 @@ import { getEntry } from 'astro:content';
 const org = await getEntry('organizations', 'organizations');
 const settings = await getEntry('settings', 'settings');
 ---
-<BaseLayout title="ארגונים" description="הרצאות וסדנאות לארגונים וחברות">
+<BaseLayout
+  title="שפת גוף לארגונים וחברות"
+  description="הרצאות וסדנאות שפת גוף לארגונים - מעיין בשן מלווה מנהלים, אנשי מכירות וצוותים בכלים לקריאת מצבים ותקשורת לא מילולית."
+>
   <section class="organizations-page reveal">
     {org?.data.tag && <span class="eyebrow">{org.data.tag}</span>}
     <h1>{org?.data.title}</h1>

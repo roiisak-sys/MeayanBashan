@@ -5,7 +5,10 @@ import { getEntry, render } from 'astro:content';
 const about = await getEntry('about', 'about');
 const { Content } = about ? await render(about) : { Content: null };
 ---
-<BaseLayout title="אודות" description="קצת עליי - מעיין בשן, מומחית שפת גוף">
+<BaseLayout
+  title="אודות מעיין בשן"
+  description='קצת עליי - הסיפור האישי של מעיין בשן (מעין בשן), איך הפכה למומחית שפת גוף ומנחת הפודקאסט "ניתוח גוף פתוח".'
+>
   <section class="about-page reveal">
     <span class="eyebrow">הסיפור שמאחורי השיטה</span>
     <h1>{about?.data.title}</h1>
