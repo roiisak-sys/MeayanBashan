@@ -46,7 +46,7 @@ collections:
           - {label: 'פודקאסט "ניתוח גוף פתוח"', value: "podcast"}
           - {label: "טלוויזיה", value: "tv"}
           - {label: "עיתונות", value: "article"}
-          - {label: "אחר", value: "other"}
+          - {label: "אירוח בפודקאסטים", value: "other"}
       - {label: "תאריך", name: "date", widget: "datetime"}
       - {label: "קישור חיצוני", name: "url", widget: "string"}
       - {label: "תמונה", name: "image", widget: "image", required: false, hint: "לא חובה כשהקישור הוא סרטון יוטיוב - במקרה כזה תמונה ממוזערת נמשכת אוטומטית מהסרטון"}

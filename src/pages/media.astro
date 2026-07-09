@@ -21,26 +21,22 @@ function cardImage(item: (typeof mediaItems)[number]): string | null {
 const sections = [
   {
     key: 'podcast',
-    eyebrowClass: 'eyebrow-orange',
     title: 'פודקאסט "ניתוח גוף פתוח"',
     items: mediaItems.filter((i) => i.data.category === 'podcast'),
   },
   {
     key: 'tv',
-    eyebrowClass: '',
     title: 'טלוויזיה',
     items: mediaItems.filter((i) => i.data.category === 'tv'),
   },
   {
     key: 'article',
-    eyebrowClass: 'eyebrow-orange',
     title: 'עיתונות',
     items: mediaItems.filter((i) => i.data.category === 'article'),
   },
   {
     key: 'other',
-    eyebrowClass: '',
-    title: 'אחר',
+    title: 'אירוח בפודקאסטים',
     items: mediaItems.filter((i) => i.data.category === 'other'),
   },
 ].filter((section) => section.items.length > 0);
@@ -54,7 +50,6 @@ const sections = [
   {sections.map((section) => (
     <section class="media-section reveal" id={section.key}>
       <div class="media-inner">
-        <span class={`eyebrow ${section.eyebrowClass}`}>{section.title}</span>
         <h2>{section.title}</h2>
         <div class="media-grid">
           {section.items.map((item) => (
