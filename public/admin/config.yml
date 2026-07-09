@@ -48,7 +48,7 @@ collections:
           - {label: "אחר", value: "other"}
       - {label: "תאריך", name: "date", widget: "datetime"}
       - {label: "קישור חיצוני", name: "url", widget: "string"}
-      - {label: "תמונה", name: "image", widget: "image", required: false}
+      - {label: "תמונה", name: "image", widget: "image", required: false, hint: "לא חובה כשהקישור הוא סרטון יוטיוב - במקרה כזה תמונה ממוזערת נמשכת אוטומטית מהסרטון"}
       - {label: "תיאור קצר", name: "description", widget: "text", required: false}
   - name: "courses"
     label: "הרצאות וקורסים"
