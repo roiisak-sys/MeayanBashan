@@ -9,6 +9,7 @@ const BASE_ID = 'appiziy69WzC5SqDK'; // Maayan Bashan CRM
 const LEADS_TABLE_ID = 'tbl3s3NLLL75Siqg3'; // לידים פרטי
 
 const FIELD_NAME = 'fldtIhXNTeKPPs41O'; // שם
+const FIELD_STATUS = 'fld9Smx5O2HTn4zus'; // סטטוס
 const FIELD_PHONE = 'fldIaXr31RLDOZgUh'; // Phone
 const FIELD_EMAIL = 'fldCawUjSTnaDDO9j'; // Email
 const FIELD_SOURCE = 'fldfCp8fztIeriZDZ'; // מקור הגעה
@@ -59,6 +60,7 @@ export default async (request) => {
           {
             fields: {
               [FIELD_NAME]: name,
+              [FIELD_STATUS]: 'חדש',
               [FIELD_PHONE]: phone,
               [FIELD_EMAIL]: email,
               [FIELD_SOURCE]: 'דף נחיתה - קורס שפת גוף',
