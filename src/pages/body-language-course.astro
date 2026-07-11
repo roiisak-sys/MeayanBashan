@@ -252,9 +252,9 @@ const faqs = [
             <span class="lp-emoji">📍</span>
             <div><h4>מיקום</h4><p>הרצליה — חניה חינם, מרחב נעים ומרווח</p></div>
           </div>
-          <div class="lp-meta-item">
-            <span class="lp-emoji">👥</span>
-            <div><h4>קבוצה קטנה</h4><p>מספר המקומות מוגבל — הרשמה מוקדמת מומלצת</p></div>
+          <div class="lp-meta-item lp-meta-urgent">
+            <span class="lp-urgency-dot" aria-hidden="true"></span>
+            <div><h4>מספר המקומות מוגבל</h4><p>הרשמה מוקדמת מומלצת</p></div>
           </div>
         </div>
       </div>
@@ -821,6 +821,8 @@ const faqs = [
   .lp-meta-item h4 { margin: 0 0 0.15rem; color: var(--color-teal); }
   .lp-meta-item p { margin: 0; font-size: 0.95rem; }
   .lp-emoji { font-size: 1.3rem; }
+  .lp-meta-urgent h4 { color: var(--color-red); }
+  .lp-meta-urgent .lp-urgency-dot { flex-shrink: 0; margin-top: 0.4rem; }
 
   /* ===== price ===== */
   .lp-price-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; align-items: start; }
