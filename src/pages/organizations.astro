@@ -5,6 +5,10 @@ import { getEntry } from 'astro:content';
 
 const org = await getEntry('organizations', 'organizations');
 const settings = await getEntry('settings', 'settings');
+const whatsappMessage = 'היי מעיין, אני מעוניין/ת בהרצאה או סדנה לארגון שלנו ואשמח לפרטים';
+const whatsappHref = settings?.data.whatsapp
+  ? `${settings.data.whatsapp}?text=${encodeURIComponent(whatsappMessage)}`
+  : undefined;
 ---
 <BaseLayout
   title="שפת גוף לארגונים וחברות"
@@ -35,8 +39,8 @@ const settings = await getEntry('settings', 'settings');
     <div class="form-wrap">
       <span class="eyebrow">בואו נתאים לכם תוכנית</span>
       <h2>מעוניינים לארגון שלכם?</h2>
-      {settings?.data.whatsapp && (
-        <a class="btn btn-teal whatsapp-cta" href={settings.data.whatsapp} target="_blank" rel="noopener">
+      {whatsappHref && (
+        <a class="btn btn-teal whatsapp-cta" href={whatsappHref} target="_blank" rel="noopener">
           לשיחה מהירה בוואטסאפ ←
         </a>
       )}

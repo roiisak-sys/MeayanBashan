@@ -1,11 +1,20 @@
 ---
 import { getEntry } from 'astro:content';
 const settings = await getEntry('settings', 'settings');
+
+interface Props {
+  message?: string;
+}
+const { message = 'היי מעיין, הגעתי מהאתר ואשמח לשמוע פרטים נוספים 🙂' } = Astro.props;
+
+const href = settings?.data.whatsapp
+  ? `${settings.data.whatsapp}?text=${encodeURIComponent(message)}`
+  : undefined;
 ---
-{settings?.data.whatsapp && (
+{href && (
   <a
     class="floating-whatsapp"
-    href={settings.data.whatsapp}
+    href={href}
     target="_blank"
     rel="noopener"
     aria-label="שליחת הודעת וואטסאפ"

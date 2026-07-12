@@ -4,6 +4,10 @@ import SocialIcons from '../components/SocialIcons.astro';
 import { getEntry } from 'astro:content';
 
 const settings = await getEntry('settings', 'settings');
+const whatsappMessage = 'היי מעיין, הגעתי מהאתר ואשמח ליצור קשר';
+const whatsappHref = settings?.data.whatsapp
+  ? `${settings.data.whatsapp}?text=${encodeURIComponent(whatsappMessage)}`
+  : undefined;
 ---
 <BaseLayout
   title="צור קשר"
@@ -16,8 +20,8 @@ const settings = await getEntry('settings', 'settings');
       <div class="contact-info">
         <p>טלפון: <a href={`tel:${settings?.data.phone}`}>{settings?.data.phone}</a></p>
         <p>מייל: <a href={`mailto:${settings?.data.email}`}>{settings?.data.email}</a></p>
-        {settings?.data.whatsapp && (
-          <a class="btn btn-teal whatsapp-cta" href={settings.data.whatsapp} target="_blank" rel="noopener">
+        {whatsappHref && (
+          <a class="btn btn-teal whatsapp-cta" href={whatsappHref} target="_blank" rel="noopener">
             שליחת הודעת וואטסאפ ←
           </a>
         )}
