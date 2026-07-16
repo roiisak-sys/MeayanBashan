@@ -49,7 +49,7 @@ const faqs = [
   },
   {
     q: 'מה קורה בכל מפגש בפועל?',
-    a: 'שעה וחצי הרצאה על הנושא של אותו מפגש, ואחריה שעה וחצי תרגול מעשי צמוד עם מעיין - מיקרו-הבעות, סימולציות, ועמידה מול קהל ומצלמה.',
+    a: 'שעה וחצי הרצאה על הנושא של אותו מפגש, ואחריה שעה וחצי תרגול מעשי צמוד עם מעיין ופידבק מיידי - מיקרו-הבעות, סימולציות, ועמידה מול קהל ומצלמה.',
   },
   {
     q: 'מה תנאי הביטול?',
@@ -83,7 +83,7 @@ const faqs = [
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Heebo:wght@700;800&family=Frank+Ruhl+Libre:wght@500;700;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700&family=Heebo:wght@400;600;700&family=Bellefair&display=swap" rel="stylesheet" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -126,7 +126,7 @@ const faqs = [
   </head>
   <body>
     <nav class="ac-nav">
-      <a href="/" class="ac-logo"><img src="/images/logo-white.png" alt="מעיין בשן" /></a>
+      <a href="/" class="ac-logo"><img src="/images/logo-teal.png" alt="מעיין בשן" /></a>
       <a href="#register" class="ac-nav-cta">הרשמה לקורס</a>
     </nav>
 
@@ -135,7 +135,6 @@ const faqs = [
       <div class="ac-hero-shapes" aria-hidden="true">
         <span class="ac-shape ac-shape-diamond1"></span>
         <span class="ac-shape ac-shape-diamond2"></span>
-        <span class="ac-shape ac-shape-line-grid"></span>
       </div>
       <div class="ac-hero-text">
         <div class="ac-badge">🎓 לבוגרי הקורס הבסיסי בלבד</div>
@@ -171,12 +170,42 @@ const faqs = [
       <div><span>1:1</span>יחס תרגול-הרצאה</div>
     </div>
 
+    <!-- PRACTICE EMPHASIS -->
+    <section class="ac-section ac-practice-section reveal">
+      <div class="ac-inner ac-center">
+        <div class="ac-eyebrow">מה שמבדיל את הקורס הזה</div>
+        <h2>לא עוד קורס <em class="ac-marker-strike">ידע</em>.<br />קורס <em class="ac-marker">יכולת</em>.</h2>
+        <p class="ac-practice-lead">
+          הכוח של הקורס המתקדם לא נמצא רק בהרצאות - הוא נמצא בשעות התרגול. כל נושא שלומדים באותו ערב, מתרגלים באותו ערב: מול מעיין, מול הקבוצה, מול מצלמה, עם פידבק מיידי על כל תזוזה. יוצאים עם דבר שאפשר להשתמש בו כבר למחרת - לא רק עם עוד ידע תיאורטי.
+        </p>
+        <div class="ac-practice-grid">
+          <div class="ac-practice-card">
+            <span class="ac-practice-num">01</span>
+            <h3>לומדים</h3>
+            <p>שעה וחצי הרצאה מעמיקה על הזווית של אותו מפגש</p>
+          </div>
+          <div class="ac-practice-arrow" aria-hidden="true">←</div>
+          <div class="ac-practice-card">
+            <span class="ac-practice-num">02</span>
+            <h3>מתרגלים</h3>
+            <p>שעה וחצי תרגול מעשי צמוד - מיקרו-הבעות, סימולציות, מול קהל ומצלמה</p>
+          </div>
+          <div class="ac-practice-arrow" aria-hidden="true">←</div>
+          <div class="ac-practice-card ac-practice-card-gold">
+            <span class="ac-practice-num">03</span>
+            <h3>יוצאים עם יכולת</h3>
+            <p>פידבק מיידי על כל תרגיל, בכל מפגש - לא ידע שנשאר על הנייר</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- MODULES -->
-    <section class="ac-section ac-section-ink ac-modules-section reveal">
+    <section class="ac-section ac-section-alt reveal">
       <div class="ac-inner">
         <div class="ac-eyebrow">מה לומדים</div>
-        <h2 class="ac-on-ink">5 זוויות <em class="ac-marker">שלא הספקנו</em> בקורס הבסיסי</h2>
-        <p class="ac-section-desc ac-on-ink-muted">כל מפגש תוקף את שפת הגוף מזווית אחרת - שעה וחצי הרצאה, ואחריה שעה וחצי תרגול מעשי צמוד: מיקרו-הבעות, סימולציות, עמידה מול קהל ומצלמה.</p>
+        <h2>5 זוויות <em class="ac-marker">שלא הספקנו</em> בקורס הבסיסי</h2>
+        <p class="ac-section-desc">כל מפגש תוקף את שפת הגוף מזווית אחרת, ומיד אחר כך - תרגול מעשי על אותה זווית בדיוק.</p>
         <div class="ac-modules">
           {modules.map((m, i) => (
             <div class="ac-module">
@@ -191,8 +220,23 @@ const faqs = [
       </div>
     </section>
 
+    <!-- GUEST: AMNON WOLF -->
+    <section class="ac-section reveal">
+      <div class="ac-inner ac-guest-grid">
+        <div class="ac-guest-photos">
+          <img src="/images/advanced-course/maayan-amnon-piggyback.jpg" alt="מעיין בשן ואמנון וולף" class="ac-guest-photo-main" />
+          <img src="/images/advanced-course/maayan-amnon-back-to-back.jpg" alt="מעיין בשן ואמנון וולף" class="ac-guest-photo-accent" />
+        </div>
+        <div class="ac-guest-text">
+          <div class="ac-eyebrow">אורח מיוחד במפגש הסטוריטלינג</div>
+          <h2>מעיין בשן <em class="ac-marker-soft">ואמנון וולף</em></h2>
+          <p>אחד המפגשים המיוחדים בקורס נעשה בשיתוף השחקן אמנון וולף - איך מספרים סיפור, ואיך מלבישים אותו בשפת גוף שגורמת לקהל להישאר איתכם עד המילה האחרונה.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- SCHEDULE -->
-    <section class="ac-section ac-section-cream reveal">
+    <section class="ac-section ac-section-alt reveal">
       <div class="ac-inner">
         <div class="ac-eyebrow">לוח זמנים</div>
         <h2>6 מפגשים <em class="ac-marker-soft">מעמיקים</em></h2>
@@ -234,7 +278,7 @@ const faqs = [
             <div class="ac-price-label">מחיר מיוחד לבוגרים</div>
             <div class="ac-price-was">מחיר מקורי: 4,400 ₪</div>
             <div class="ac-price-now">3,800 <span>₪</span></div>
-            <p>שישה מפגשים, שלוש שעות כל מפגש - הרצאה מעמיקה ותרגול מעשי צמוד.</p>
+            <p>שישה מפגשים, שלוש שעות כל מפגש - הרצאה מעמיקה ותרגול מעשי צמוד עם פידבק מיידי.</p>
             <a href="#register" class="ac-btn">הרשמה עכשיו ←</a>
             <div class="ac-urgency"><span class="ac-urgency-dot"></span> עד 40 בוגרים בלבד</div>
           </div>
@@ -262,7 +306,7 @@ const faqs = [
     </section>
 
     <!-- FAQ -->
-    <section class="ac-section ac-section-cream reveal">
+    <section class="ac-section ac-section-alt reveal">
       <div class="ac-inner ac-faq-inner">
         <div class="ac-eyebrow">שאלות נפוצות</div>
         <h2>יש לכם שאלות?</h2>
@@ -398,31 +442,49 @@ const faqs = [
 </html>
 
 <style>
-  /* ===== advanced-course tokens — serif-forward, red-led palette ===== */
+  /* ===== light luxury tokens ===== */
   :root {
-    --ink: #0f3229;
-    --paper: #fffdf9;
-    --font-display: 'Heebo', 'Assistant', sans-serif;
-    --font-serif: 'Frank Ruhl Libre', serif;
-    --shadow-hard: 0.5rem 0.5rem 0 rgba(15, 50, 41, 0.16);
-    --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+    --ac-ivory: #faf5ec;
+    --ac-cream: #f2e6d3;
+    --ac-charcoal: #3a332c;
+    --ac-gold: #b8863f;
+    --ac-gold-soft: #e3c48f;
+    --ac-rose: #b97b6a;
+    --ac-teal: #17836a;
+    --ac-font-display: 'Bellefair', 'Frank Ruhl Libre', serif;
+    --ac-font-label: 'Heebo', 'Assistant', sans-serif;
+    --ac-font-body: 'Assistant', sans-serif;
+    --ac-shadow-soft: 0 14px 36px rgba(58, 51, 44, 0.08);
+    --ac-shadow-soft-lg: 0 22px 50px rgba(58, 51, 44, 0.12);
   }
 
-  h1, h2, h3 { font-family: var(--font-serif); }
-  h4 { font-family: var(--font-display); }
+  body { background: var(--ac-ivory); color: var(--ac-charcoal); }
+  h1, h2, h3 { font-family: var(--ac-font-display); font-weight: 400; }
 
   .ac-marker {
     font-style: normal;
-    color: var(--paper);
-    background: linear-gradient(100deg, transparent 2%, var(--color-red) 2%, var(--color-red) 98%, transparent 98%);
-    padding: 0 0.35rem;
+    color: var(--ac-charcoal);
+    background: linear-gradient(180deg, transparent 58%, var(--ac-gold-soft) 58%);
+    padding: 0 0.2rem;
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
   }
   .ac-marker-soft {
     font-style: normal;
-    background: linear-gradient(180deg, transparent 55%, rgba(219, 52, 41, 0.22) 55%);
-    padding: 0 0.15rem;
+    color: var(--ac-gold);
+  }
+  .ac-marker-strike {
+    font-style: normal;
+    position: relative;
+    color: rgba(58, 51, 44, 0.45);
+  }
+  .ac-marker-strike::after {
+    content: '';
+    position: absolute;
+    inset-inline: -0.1rem;
+    top: 52%;
+    height: 1.5px;
+    background: var(--ac-rose);
   }
 
   /* ===== nav ===== */
@@ -434,24 +496,24 @@ const faqs = [
     justify-content: space-between;
     align-items: center;
     padding: 0.85rem 2rem;
-    background: rgba(10, 37, 30, 0.9);
+    background: rgba(250, 245, 236, 0.92);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(219, 52, 41, 0.3);
+    border-bottom: 1px solid rgba(184, 134, 63, 0.25);
   }
-  .ac-logo img { height: 28px; width: auto; }
+  .ac-logo img { height: 26px; width: auto; }
   .ac-nav-cta {
-    background: var(--color-red);
-    color: var(--paper);
-    font-family: var(--font-display);
+    background: var(--ac-gold);
+    color: var(--ac-ivory);
+    font-family: var(--ac-font-label);
     font-weight: 700;
     font-size: 0.9rem;
     padding: 0.5rem 1.25rem;
-    border-radius: 6px;
+    border-radius: 999px;
     text-decoration: none;
     white-space: nowrap;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
   }
-  .ac-nav-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(219, 52, 41, 0.4); }
+  .ac-nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(184, 134, 63, 0.3); }
 
   /* ===== hero ===== */
   .ac-hero {
@@ -462,18 +524,11 @@ const faqs = [
     gap: 2rem;
     padding: 4rem 3rem 3.5rem;
     background:
-      radial-gradient(ellipse 900px 600px at 85% 15%, rgba(219, 52, 41, 0.28), transparent 60%),
-      radial-gradient(ellipse 700px 500px at 5% 95%, rgba(244, 175, 67, 0.14), transparent 60%),
-      var(--ink);
-    color: var(--paper);
+      radial-gradient(ellipse 900px 600px at 88% 10%, rgba(227, 196, 143, 0.5), transparent 65%),
+      radial-gradient(ellipse 700px 500px at 5% 100%, rgba(185, 123, 106, 0.16), transparent 60%),
+      var(--ac-ivory);
+    color: var(--ac-charcoal);
     overflow: hidden;
-  }
-  .ac-hero::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: var(--grain);
-    pointer-events: none;
   }
   .ac-shape { position: absolute; pointer-events: none; }
   .ac-shape-diamond1 {
@@ -481,7 +536,7 @@ const faqs = [
     top: -60px;
     width: 200px;
     height: 200px;
-    border: 2px solid rgba(219, 52, 41, 0.3);
+    border: 1.5px solid rgba(184, 134, 63, 0.25);
     transform: rotate(45deg);
   }
   .ac-shape-diamond2 {
@@ -489,59 +544,49 @@ const faqs = [
     bottom: -80px;
     width: 220px;
     height: 220px;
-    border: 2px dashed rgba(244, 175, 67, 0.3);
+    border: 1.5px dashed rgba(185, 123, 106, 0.25);
     transform: rotate(45deg);
-  }
-  .ac-shape-line-grid {
-    inset-inline-start: 8%;
-    bottom: 10%;
-    width: 110px;
-    height: 80px;
-    background-image:
-      linear-gradient(rgba(251, 244, 231, 0.18) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(251, 244, 231, 0.18) 1px, transparent 1px);
-    background-size: 14px 14px;
   }
 
   .ac-hero-text { max-width: 580px; position: relative; z-index: 2; }
   .ac-badge {
     display: inline-block;
-    font-family: var(--font-display);
+    font-family: var(--ac-font-label);
     font-weight: 700;
     font-size: 0.85rem;
-    background: var(--color-red);
-    color: var(--paper);
+    background: var(--ac-charcoal);
+    color: var(--ac-ivory);
     padding: 0.4rem 1rem;
     border-radius: 999px;
     margin-bottom: 0.85rem;
   }
   .ac-eyebrow-pill {
     display: block;
-    font-family: var(--font-display);
-    color: var(--color-orange);
+    font-family: var(--ac-font-label);
+    color: var(--ac-gold);
     font-size: 0.85rem;
     font-weight: 600;
     margin-bottom: 1.25rem;
     letter-spacing: 0.02em;
   }
   .ac-hero h1 {
-    font-size: clamp(2.4rem, 5.5vw, 3.8rem);
-    font-weight: 700;
-    line-height: 1.15;
+    font-size: clamp(2.4rem, 5.5vw, 3.9rem);
+    line-height: 1.22;
     margin-bottom: 1.25rem;
-    letter-spacing: -0.005em;
+    color: var(--ac-charcoal);
   }
-  .ac-hero-sub { font-size: 1.1rem; margin-bottom: 1.75rem; color: rgba(251, 244, 231, 0.75); }
-  .ac-bullets { list-style: none; padding: 0; margin: 0 0 2rem; display: grid; gap: 0.7rem; font-family: var(--font-display); }
-  .ac-bullets li { padding-inline-start: 1.9rem; position: relative; font-weight: 600; }
+  .ac-hero-sub { font-family: var(--ac-font-body); font-size: 1.1rem; margin-bottom: 1.75rem; color: rgba(58, 51, 44, 0.7); }
+  .ac-bullets { list-style: none; padding: 0; margin: 0 0 2rem; display: grid; gap: 0.7rem; font-family: var(--ac-font-label); }
+  .ac-bullets li { padding-inline-start: 1.9rem; position: relative; font-weight: 500; }
   .ac-bullets li::before {
     content: '›';
     position: absolute;
     inset-inline-start: 0;
-    color: var(--paper);
-    background: var(--color-red);
+    color: var(--ac-ivory);
+    background: var(--ac-gold);
     width: 1.25rem;
     height: 1.25rem;
+    border-radius: 50%;
     font-size: 0.9rem;
     font-weight: 900;
     display: inline-flex;
@@ -553,37 +598,37 @@ const faqs = [
 
   .ac-btn {
     display: inline-block;
-    background: var(--color-red);
-    color: var(--paper);
-    font-family: var(--font-display);
-    font-weight: 800;
-    font-size: 1.05rem;
+    background: var(--ac-gold);
+    color: var(--ac-ivory);
+    font-family: var(--ac-font-label);
+    font-weight: 700;
+    font-size: 1.02rem;
     padding: 0.9rem 2rem;
-    border-radius: 6px;
+    border-radius: 999px;
     text-decoration: none;
     white-space: nowrap;
-    box-shadow: var(--shadow-hard);
+    box-shadow: var(--ac-shadow-soft);
     transition: transform 0.15s ease, box-shadow 0.15s ease;
   }
-  .ac-btn:hover { transform: translate(-3px, -3px); box-shadow: 0.8rem 0.8rem 0 rgba(15, 50, 41, 0.2); }
-  .ac-btn-hero { box-shadow: 0.5rem 0.5rem 0 rgba(219, 52, 41, 0.25); }
-  .ac-btn-hero:hover { box-shadow: 0.8rem 0.8rem 0 rgba(219, 52, 41, 0.3); }
+  .ac-btn:hover { transform: translateY(-2px); box-shadow: var(--ac-shadow-soft-lg); }
 
-  .ac-price-tag { display: flex; flex-direction: column; line-height: 1.4; font-family: var(--font-display); }
+  .ac-price-tag { display: flex; flex-direction: column; line-height: 1.4; font-family: var(--ac-font-label); }
   .ac-price-old { text-decoration: line-through; opacity: 0.5; font-size: 0.9rem; }
-  .ac-price-tag strong { color: var(--color-orange); font-size: 1.25rem; }
+  .ac-price-tag strong { color: var(--ac-rose); font-size: 1.25rem; }
   .ac-price-tag span:last-child { font-size: 0.85rem; opacity: 0.65; }
 
   .ac-hero-image { position: relative; z-index: 2; }
   .ac-hero-frame {
     position: absolute;
     inset: -16px;
-    border: 2px solid rgba(219, 52, 41, 0.4);
+    border: 1.5px solid rgba(184, 134, 63, 0.4);
+    border-radius: 50%;
   }
   .ac-hero-image img {
-    max-width: min(360px, 100%);
+    max-width: min(340px, 100%);
     position: relative;
-    filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.45)) grayscale(0.15);
+    border-radius: 50%;
+    box-shadow: var(--ac-shadow-soft-lg);
   }
 
   /* ===== trust bar ===== */
@@ -593,73 +638,126 @@ const faqs = [
     gap: 3.5rem;
     flex-wrap: wrap;
     padding: 1.5rem 2rem;
-    background: var(--color-red);
-    color: var(--paper);
-    font-weight: 700;
-    font-family: var(--font-display);
+    background: var(--ac-charcoal);
+    color: var(--ac-ivory);
+    font-weight: 600;
+    font-family: var(--ac-font-label);
   }
   .ac-trust-bar div { display: flex; align-items: baseline; gap: 0.5rem; }
   .ac-trust-bar span {
-    font-weight: 900;
+    font-family: var(--ac-font-display);
     font-size: 1.9rem;
-    letter-spacing: -0.02em;
+    color: var(--ac-gold-soft);
   }
 
   /* ===== sections ===== */
-  .ac-section { padding: 4.5rem 2rem; background: var(--paper); }
-  .ac-section-cream { background: var(--color-cream); }
-  .ac-section-ink {
-    background: var(--ink);
-    background-image: var(--grain);
-    color: var(--paper);
-  }
+  .ac-section { padding: 4.5rem 2rem; background: var(--ac-ivory); }
+  .ac-section-alt { background: var(--ac-cream); }
   .ac-inner { max-width: 1000px; margin: 0 auto; }
   .ac-eyebrow {
-    font-family: var(--font-display);
+    font-family: var(--ac-font-label);
     font-weight: 700;
-    color: var(--color-red);
-    font-size: 0.9rem;
-    letter-spacing: 0.04em;
+    color: var(--ac-rose);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
     margin-bottom: 0.6rem;
     display: block;
   }
   .ac-section h2 {
-    color: var(--color-teal);
+    color: var(--ac-charcoal);
     font-size: clamp(1.8rem, 4vw, 2.5rem);
-    font-weight: 700;
     margin-bottom: 0.85rem;
   }
-  .ac-on-ink { color: var(--paper) !important; }
-  .ac-on-ink-muted { color: rgba(251, 244, 231, 0.7); }
-  .ac-section-desc { margin-bottom: 2.25rem; max-width: 640px; font-family: var(--font-display); }
+  .ac-section-desc { margin-bottom: 2.25rem; max-width: 640px; font-family: var(--ac-font-body); color: rgba(58, 51, 44, 0.75); }
   .ac-center { text-align: center; }
   .ac-center .ac-section-desc, .ac-center h2 { margin-inline: auto; }
 
-  /* reveal on scroll */
   .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s ease, transform 0.7s ease; }
   .reveal.in-view { opacity: 1; transform: none; }
 
+  /* ===== practice emphasis ===== */
+  .ac-practice-lead {
+    max-width: 680px;
+    margin: 0 auto 2.75rem;
+    font-family: var(--ac-font-body);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(58, 51, 44, 0.8);
+  }
+  .ac-practice-grid {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .ac-practice-card {
+    flex: 1 1 220px;
+    max-width: 260px;
+    background: var(--ac-ivory);
+    border: 1px solid rgba(184, 134, 63, 0.3);
+    border-radius: 14px;
+    padding: 1.75rem 1.5rem;
+    box-shadow: var(--ac-shadow-soft);
+  }
+  .ac-practice-card-gold {
+    background: linear-gradient(165deg, var(--ac-gold-soft), var(--ac-cream));
+    border-color: var(--ac-gold);
+  }
+  .ac-practice-num {
+    display: block;
+    font-family: var(--ac-font-display);
+    font-size: 1.3rem;
+    color: var(--ac-gold);
+    margin-bottom: 0.5rem;
+  }
+  .ac-practice-card h3 { font-size: 1.15rem; margin-bottom: 0.5rem; color: var(--ac-charcoal); }
+  .ac-practice-card p { font-family: var(--ac-font-body); font-size: 0.92rem; margin: 0; color: rgba(58, 51, 44, 0.75); }
+  .ac-practice-arrow { align-self: center; font-size: 1.4rem; color: var(--ac-gold); opacity: 0.6; }
+
   /* ===== modules ===== */
-  .ac-modules { display: grid; gap: 1.5rem; margin-top: 2.5rem; }
+  .ac-modules { display: grid; gap: 1.25rem; margin-top: 2.5rem; }
   .ac-module {
     display: flex;
     gap: 1.5rem;
     align-items: flex-start;
-    background: rgba(255, 253, 249, 0.06);
-    border: 1px solid rgba(219, 52, 41, 0.35);
-    border-radius: 6px;
+    background: var(--ac-ivory);
+    border: 1px solid rgba(184, 134, 63, 0.25);
+    border-radius: 14px;
     padding: 1.5rem 1.75rem;
+    box-shadow: var(--ac-shadow-soft);
   }
   .ac-module-num {
     flex-shrink: 0;
-    font-family: var(--font-serif);
-    font-weight: 900;
-    font-size: 2.25rem;
-    color: var(--color-red);
+    font-family: var(--ac-font-display);
+    font-size: 2.1rem;
+    color: var(--ac-gold);
     line-height: 1;
   }
-  .ac-module-body h3 { color: var(--paper); font-size: 1.2rem; margin-bottom: 0.4rem; font-weight: 700; }
-  .ac-module-body p { margin: 0; line-height: 1.7; color: rgba(251, 244, 231, 0.8); font-family: var(--font-display); font-size: 0.95rem; }
+  .ac-module-body h3 { font-family: var(--ac-font-label); color: var(--ac-charcoal); font-size: 1.1rem; margin-bottom: 0.4rem; font-weight: 700; }
+  .ac-module-body p { margin: 0; line-height: 1.7; font-family: var(--ac-font-body); font-size: 0.95rem; color: rgba(58, 51, 44, 0.75); }
+
+  /* ===== guest photos ===== */
+  .ac-guest-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+  .ac-guest-photos { position: relative; justify-self: center; width: 100%; max-width: 380px; }
+  .ac-guest-photo-main {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: var(--ac-shadow-soft-lg);
+    position: relative;
+    z-index: 1;
+  }
+  .ac-guest-photo-accent {
+    position: absolute;
+    width: 46%;
+    bottom: -12%;
+    inset-inline-start: -12%;
+    border-radius: 12px;
+    border: 4px solid var(--ac-ivory);
+    box-shadow: var(--ac-shadow-soft);
+    z-index: 2;
+  }
+  .ac-guest-text p { font-family: var(--ac-font-body); line-height: 1.85; color: rgba(58, 51, 44, 0.8); }
 
   /* ===== schedule tickets ===== */
   .ac-tickets { display: flex; flex-wrap: wrap; gap: 1.25rem; margin-bottom: 2.5rem; }
@@ -667,111 +765,96 @@ const faqs = [
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: var(--paper);
-    border: 2px dashed var(--color-red);
-    border-radius: 6px;
+    background: var(--ac-ivory);
+    border: 1.5px dashed var(--ac-gold);
+    border-radius: 12px;
     padding: 0.9rem 1.4rem;
-    position: relative;
-    box-shadow: 0.35rem 0.35rem 0 rgba(219, 52, 41, 0.12);
+    box-shadow: var(--ac-shadow-soft);
   }
-  .ac-ticket::before, .ac-ticket::after {
-    content: '';
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    background: var(--color-cream);
-    border: 2px dashed var(--color-red);
-    border-radius: 50%;
-    top: 50%;
-  }
-  .ac-ticket::before { inset-inline-start: -10px; transform: translateY(-50%); border-inline-start-color: transparent; }
-  .ac-ticket::after { inset-inline-end: -10px; transform: translateY(-50%); border-inline-end-color: transparent; }
-  .ac-ticket-day { font-family: var(--font-display); font-size: 0.8rem; font-weight: 600; color: var(--color-orange); }
+  .ac-ticket-day { font-family: var(--ac-font-label); font-size: 0.8rem; font-weight: 600; color: var(--ac-rose); }
   .ac-ticket-date {
-    font-family: var(--font-serif);
-    font-weight: 900;
+    font-family: var(--ac-font-display);
     font-size: 1.7rem;
-    color: var(--color-teal);
-    line-height: 1.1;
+    color: var(--ac-teal);
+    line-height: 1.2;
   }
-  .ac-ticket-num { font-family: var(--font-display); font-size: 0.75rem; opacity: 0.6; }
+  .ac-ticket-num { font-family: var(--ac-font-label); font-size: 0.75rem; opacity: 0.6; }
 
-  .ac-meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; font-family: var(--font-display); }
+  .ac-meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; font-family: var(--ac-font-body); }
   .ac-meta-item { display: flex; gap: 0.65rem; align-items: flex-start; }
-  .ac-meta-item h4 { margin: 0 0 0.15rem; color: var(--color-teal); }
-  .ac-meta-item p { margin: 0; font-size: 0.95rem; }
+  .ac-meta-item h4 { font-family: var(--ac-font-label); margin: 0 0 0.15rem; color: var(--ac-charcoal); }
+  .ac-meta-item p { margin: 0; font-size: 0.95rem; color: rgba(58, 51, 44, 0.75); }
   .ac-emoji { font-size: 1.3rem; }
 
   /* ===== price ===== */
   .ac-price-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; align-items: start; }
   .ac-price-card {
-    background: var(--paper);
-    border: 2px solid var(--ink);
-    border-radius: 6px;
+    background: var(--ac-ivory);
+    border: 1px solid rgba(184, 134, 63, 0.3);
+    border-radius: 16px;
     padding: 2.25rem;
-    box-shadow: 0.6rem 0.6rem 0 var(--color-red);
+    box-shadow: var(--ac-shadow-soft-lg);
   }
-  .ac-price-label { font-family: var(--font-display); font-weight: 700; color: var(--color-red); margin-bottom: 0.5rem; }
-  .ac-price-was { text-decoration: line-through; opacity: 0.5; font-family: var(--font-display); }
+  .ac-price-label { font-family: var(--ac-font-label); font-weight: 700; color: var(--ac-rose); margin-bottom: 0.5rem; }
+  .ac-price-was { text-decoration: line-through; opacity: 0.5; font-family: var(--ac-font-label); }
   .ac-price-now {
-    font-family: var(--font-serif);
+    font-family: var(--ac-font-display);
     font-size: 4rem;
-    font-weight: 900;
-    color: var(--color-teal);
-    line-height: 1.05;
+    color: var(--ac-teal);
+    line-height: 1.1;
     margin-bottom: 0.5rem;
   }
   .ac-price-now span { font-size: 1.8rem; }
-  .ac-price-card p { font-family: var(--font-display); }
+  .ac-price-card p { font-family: var(--ac-font-body); color: rgba(58, 51, 44, 0.75); }
   .ac-price-card .ac-btn { margin-top: 1.5rem; }
   .ac-urgency {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     margin-top: 1.25rem;
-    color: var(--color-red);
+    color: var(--ac-rose);
     font-weight: 700;
     font-size: 0.9rem;
-    font-family: var(--font-display);
+    font-family: var(--ac-font-label);
   }
-  .ac-urgency-dot { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--color-red); animation: ac-pulse 1.4s infinite; }
-  @keyframes ac-pulse { 50% { opacity: 0.25; } }
+  .ac-urgency-dot { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--ac-rose); animation: ac-pulse 1.4s infinite; }
+  @keyframes ac-pulse { 50% { opacity: 0.3; } }
   .ac-info-card {
-    background: var(--color-cream);
-    border: 2px dashed var(--color-teal);
-    border-radius: 6px;
+    background: var(--ac-cream);
+    border: 1.5px dashed var(--ac-teal);
+    border-radius: 16px;
     padding: 2rem;
   }
-  .ac-info-tag { font-family: var(--font-display); font-weight: 700; color: var(--color-teal); }
-  .ac-info-card h3 { color: var(--ink); margin: 0.5rem 0; font-size: 1.25rem; }
-  .ac-info-card p { font-family: var(--font-display); font-size: 0.92rem; }
-  .ac-info-card hr { border: none; border-top: 1px dashed rgba(23, 131, 106, 0.4); margin: 1.25rem 0; }
-  .ac-small { font-size: 0.85rem; opacity: 0.7; font-family: var(--font-display); }
+  .ac-info-tag { font-family: var(--ac-font-label); font-weight: 700; color: var(--ac-teal); }
+  .ac-info-card h3 { color: var(--ac-charcoal); margin: 0.5rem 0; font-size: 1.25rem; }
+  .ac-info-card p { font-family: var(--ac-font-body); font-size: 0.92rem; color: rgba(58, 51, 44, 0.75); }
+  .ac-info-card hr { border: none; border-top: 1px dashed rgba(23, 131, 106, 0.35); margin: 1.25rem 0; }
+  .ac-small { font-size: 0.85rem; opacity: 0.7; font-family: var(--ac-font-body); }
 
   /* ===== payment banner ===== */
   .ac-instant-section {
-    background: linear-gradient(120deg, var(--color-red), var(--ink));
+    background: linear-gradient(120deg, var(--ac-gold-soft), var(--ac-rose));
   }
-  .ac-instant { display: flex; align-items: center; justify-content: space-between; gap: 2rem; color: var(--paper); font-family: var(--font-display); }
-  .ac-instant-tag { font-weight: 700; color: var(--color-orange); }
-  .ac-instant h3 { font-size: 1.5rem; margin: 0.5rem 0; color: var(--paper); }
-  .ac-instant p { margin: 0; opacity: 0.85; }
-  .ac-btn-light { flex-shrink: 0; background: var(--color-orange); color: var(--ink); }
+  .ac-instant { display: flex; align-items: center; justify-content: space-between; gap: 2rem; color: var(--ac-charcoal); font-family: var(--ac-font-body); }
+  .ac-instant-tag { font-family: var(--ac-font-label); font-weight: 700; color: var(--ac-charcoal); }
+  .ac-instant h3 { font-size: 1.5rem; margin: 0.5rem 0; color: var(--ac-charcoal); }
+  .ac-instant p { margin: 0; opacity: 0.75; }
+  .ac-btn-light { flex-shrink: 0; background: var(--ac-charcoal); color: var(--ac-ivory); }
 
   /* ===== faq ===== */
   .ac-faq-inner { max-width: 760px; }
   .ac-faq-list { display: grid; }
-  .ac-faq-item { border-bottom: 2px solid rgba(15, 50, 41, 0.15); padding: 0.35rem 0; }
+  .ac-faq-item { border-bottom: 1px solid rgba(184, 134, 63, 0.3); padding: 0.35rem 0; }
   .ac-faq-item summary {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
-    font-family: var(--font-display);
-    font-weight: 800;
-    font-size: 1.05rem;
+    font-family: var(--ac-font-label);
+    font-weight: 700;
+    font-size: 1.02rem;
     cursor: pointer;
-    color: var(--ink);
+    color: var(--ac-charcoal);
     padding: 0.85rem 0;
     list-style: none;
   }
@@ -780,29 +863,30 @@ const faqs = [
     flex-shrink: 0;
     width: 1.75rem;
     height: 1.75rem;
-    border: 2px solid var(--color-red);
+    border: 1.5px solid var(--ac-gold);
     border-radius: 50%;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-red);
+    color: var(--ac-gold);
     font-weight: 700;
     transition: transform 0.2s ease;
   }
-  .ac-faq-item[open] .ac-faq-plus { transform: rotate(45deg); background: var(--color-red); color: var(--paper); }
-  .ac-faq-item p { margin: 0 0 1rem; line-height: 1.7; font-family: var(--font-display); }
+  .ac-faq-item[open] .ac-faq-plus { transform: rotate(45deg); background: var(--ac-gold); color: var(--ac-ivory); }
+  .ac-faq-item p { margin: 0 0 1rem; line-height: 1.7; font-family: var(--ac-font-body); color: rgba(58, 51, 44, 0.8); }
 
   .ac-faq-addendum {
     margin: 0.25rem 0 1.25rem;
     padding: 1.5rem 1.5rem 1.25rem;
-    background: var(--paper);
-    border-inline-start: 3px dashed var(--color-red);
+    background: var(--ac-ivory);
+    border-inline-start: 2px dashed var(--ac-rose);
     border-radius: 4px;
-    font-family: var(--font-display);
+    font-family: var(--ac-font-body);
   }
   .ac-faq-addendum h4 {
+    font-family: var(--ac-font-label);
     font-weight: 700;
-    color: var(--color-teal);
+    color: var(--ac-teal);
     font-size: 1rem;
     margin: 0 0 0.75rem;
   }
@@ -818,9 +902,9 @@ const faqs = [
   .ac-faq-contacts li {
     font-weight: 700;
     font-size: 0.88rem;
-    color: var(--ink);
-    background: var(--color-cream);
-    border: 1.5px solid var(--color-red);
+    color: var(--ac-charcoal);
+    background: var(--ac-cream);
+    border: 1px solid var(--ac-gold);
     border-radius: 999px;
     padding: 0.3rem 0.9rem;
   }
@@ -831,64 +915,64 @@ const faqs = [
     gap: 0.6rem;
   }
   .ac-faq-rules li { font-size: 0.92rem; line-height: 1.6; }
-  .ac-faq-rules li::marker { font-weight: 800; color: var(--color-red); }
+  .ac-faq-rules li::marker { font-weight: 800; color: var(--ac-rose); }
   .ac-faq-fine { font-size: 0.78rem; opacity: 0.65; line-height: 1.6; margin: 0; }
 
   /* ===== register ===== */
-  .ac-register-section { position: relative; background: var(--color-cream); overflow: hidden; }
+  .ac-register-section { position: relative; background: var(--ac-cream); overflow: hidden; }
   .ac-shape-diamond3 {
     inset-inline-end: -80px;
     bottom: -80px;
     width: 220px;
     height: 220px;
-    border: 2px dashed rgba(219, 52, 41, 0.3);
+    border: 1.5px dashed rgba(184, 134, 63, 0.3);
     transform: rotate(45deg);
   }
   .ac-form-wrap {
     position: relative;
     max-width: 580px;
     margin: 0 auto;
-    background: var(--paper);
-    border: 2px solid var(--ink);
-    border-radius: 6px;
+    background: var(--ac-ivory);
+    border: 1px solid rgba(184, 134, 63, 0.3);
+    border-radius: 20px;
     padding: 2.75rem 2.25rem;
-    box-shadow: 0.6rem 0.6rem 0 var(--color-teal);
+    box-shadow: var(--ac-shadow-soft-lg);
   }
-  .ac-form-wrap form { display: flex; flex-direction: column; gap: 1.1rem; margin-top: 1.75rem; font-family: var(--font-display); }
+  .ac-form-wrap form { display: flex; flex-direction: column; gap: 1.1rem; margin-top: 1.75rem; font-family: var(--ac-font-body); }
   .ac-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
-  .ac-form-wrap label { display: flex; flex-direction: column; gap: 0.35rem; font-weight: 700; font-size: 0.95rem; }
+  .ac-form-wrap label { display: flex; flex-direction: column; gap: 0.35rem; font-weight: 700; font-size: 0.95rem; font-family: var(--ac-font-label); }
   .ac-form-wrap input {
     padding: 0.7rem;
-    border-radius: 6px;
-    border: 2px solid rgba(15, 50, 41, 0.25);
+    border-radius: 10px;
+    border: 1.5px solid rgba(58, 51, 44, 0.2);
     font-family: inherit;
     font-size: 1rem;
-    background: var(--color-cream);
+    background: var(--ac-cream);
     transition: border-color 0.15s ease;
   }
-  .ac-form-wrap input:focus { outline: none; border-color: var(--color-red); }
+  .ac-form-wrap input:focus { outline: none; border-color: var(--ac-gold); }
   .ac-form-wrap button {
-    font-family: var(--font-display);
+    font-family: var(--ac-font-label);
     padding: 1rem;
-    background: var(--color-red);
-    color: var(--paper);
+    background: var(--ac-gold);
+    color: var(--ac-ivory);
     border: none;
-    border-radius: 6px;
-    font-weight: 800;
+    border-radius: 999px;
+    font-weight: 700;
     font-size: 1.1rem;
     cursor: pointer;
-    box-shadow: var(--shadow-hard);
+    box-shadow: var(--ac-shadow-soft);
     transition: transform 0.15s ease, box-shadow 0.15s ease;
   }
-  .ac-form-wrap button:hover { transform: translate(-3px, -3px); box-shadow: 0.8rem 0.8rem 0 rgba(15, 50, 41, 0.2); }
+  .ac-form-wrap button:hover { transform: translateY(-2px); box-shadow: var(--ac-shadow-soft-lg); }
   .ac-hidden-field { display: none; }
-  .ac-form-success, .ac-form-error { text-align: center; font-weight: 700; margin-top: 1.25rem; font-family: var(--font-display); }
-  .ac-form-success { color: var(--color-teal); }
+  .ac-form-success, .ac-form-error { text-align: center; font-weight: 700; margin-top: 1.25rem; font-family: var(--ac-font-label); }
+  .ac-form-success { color: var(--ac-teal); }
   .ac-form-success p { margin-bottom: 0.85rem; }
-  .ac-pay-now { color: var(--color-text); font-weight: 600; }
-  .ac-form-error { color: var(--color-red); }
+  .ac-pay-now { color: var(--ac-charcoal); font-weight: 600; }
+  .ac-form-error { color: var(--ac-rose); }
   [hidden] { display: none; }
-  .ac-disclaimer { text-align: center; font-size: 0.85rem; opacity: 0.65; margin-top: 1.25rem; font-family: var(--font-display); }
+  .ac-disclaimer { text-align: center; font-size: 0.85rem; opacity: 0.6; margin-top: 1.25rem; font-family: var(--ac-font-body); }
 
   /* ===== responsive ===== */
   @media (max-width: 860px) {
@@ -901,5 +985,9 @@ const faqs = [
     .ac-trust-bar { gap: 1.5rem; }
     .ac-tickets { justify-content: center; }
     .ac-module { flex-direction: column; gap: 0.5rem; }
+    .ac-practice-grid { flex-direction: column; align-items: center; }
+    .ac-practice-arrow { transform: rotate(-90deg); }
+    .ac-guest-grid { grid-template-columns: 1fr; }
+    .ac-guest-photos { margin-bottom: 2.5rem; }
   }
 </style>
