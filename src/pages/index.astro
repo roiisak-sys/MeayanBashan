@@ -12,6 +12,7 @@ const featuredCourse = courses.find((c) => c.data.featured) ?? courses[0];
 <BaseLayout
   title="מעיין בשן - מומחית שפת גוף"
   description='מעיין בשן (מעין בשן) - מומחית שפת גוף, מרצה ופרשנית תקשורת לא מילולית. הרצאות, קורסים ופודקאסט "ניתוח גוף פתוח".'
+  bgVariant="base"
 >
   <Hero />
   <PartnerLogos />
@@ -35,12 +36,12 @@ const featuredCourse = courses.find((c) => c.data.featured) ?? courses[0];
     padding: 4rem 2rem;
     text-align: center;
   }
-  .about-teaser { background: var(--color-cream); }
-  .about-teaser p { max-width: 640px; margin: 0 auto 1.75rem; font-size: 1.05rem; }
+  .about-teaser { background: var(--bg-alt); }
+  .about-teaser p { max-width: 640px; margin: 0 auto 1.75rem; font-size: 1.05rem; color: var(--ink-dim); }
   .course-teaser {
-    background-color: var(--ink);
+    background-color: var(--navy-deep);
     background-image: var(--grain);
-    color: var(--paper);
+    color: var(--ink);
   }
-  .course-teaser h2 { color: var(--paper); max-width: 640px; margin: 0.5rem auto 1.75rem; }
+  .course-teaser h2 { color: var(--ink); max-width: 640px; margin: 0.5rem auto 1.75rem; }
 </style>

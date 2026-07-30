@@ -12,6 +12,7 @@ const whatsappHref = settings?.data.whatsapp
 <BaseLayout
   title="צור קשר"
   description="יצירת קשר עם מעיין בשן (מעין בשן) - מומחית שפת גוף. טלפון, מייל, וואטסאפ והודעה ישירה להרצאות, קורסים ופניות עסקיות."
+  bgVariant="light"
 >
   <section class="contact-page reveal">
     <div class="form-wrap">
@@ -48,36 +49,37 @@ const whatsappHref = settings?.data.whatsapp
   .form-wrap {
     max-width: 580px;
     margin: 0 auto;
-    background: var(--paper);
-    border: 3px solid var(--ink);
+    background: var(--card);
+    border: 3px solid var(--border);
     border-radius: 20px;
     padding: 2.75rem 2.25rem;
-    box-shadow: 0.6rem 0.6rem 0 var(--color-teal);
+    box-shadow: 0.6rem 0.6rem 0 var(--gold);
     text-align: center;
   }
   .form-wrap .eyebrow { text-align: center; }
-  .form-wrap h1 { color: var(--color-teal); font-size: clamp(1.9rem, 4vw, 2.4rem); margin-bottom: 1.5rem; }
+  .form-wrap h1 { color: var(--gold); font-size: clamp(1.9rem, 4vw, 2.4rem); margin-bottom: 1.5rem; }
   .contact-info { margin-bottom: 2rem; }
-  .contact-info a { font-weight: 700; color: var(--color-teal); }
+  .contact-info a { font-weight: 700; color: var(--gold); }
   .whatsapp-cta { display: inline-block; margin: 1rem 0 0.5rem; background: #25d366; color: white; }
-  .socials { margin-top: 0.85rem; color: var(--color-teal); }
+  .socials { margin-top: 0.85rem; color: var(--gold); }
   form { display: flex; flex-direction: column; gap: 1.1rem; text-align: start; }
   label { display: flex; flex-direction: column; gap: 0.35rem; font-weight: 700; font-size: 0.95rem; }
   input, textarea {
     padding: 0.7rem;
     border-radius: 10px;
-    border: 2px solid rgba(15, 50, 41, 0.25);
+    border: 1.5px solid rgba(243, 239, 227, 0.2);
     font-family: inherit;
     font-size: 1rem;
-    background: var(--color-cream);
+    color: var(--ink);
+    background: rgba(255, 255, 255, 0.06);
     transition: border-color 0.15s ease;
   }
-  input:focus, textarea:focus { outline: none; border-color: var(--color-teal); }
+  input:focus, textarea:focus { outline: none; border-color: var(--gold); }
   .hidden-field { display: none; }
   button[type="submit"] { align-self: center; margin-top: 0.5rem; }
   .form-success, .form-error { text-align: center; font-weight: 700; margin-top: 1.25rem; }
-  .form-success { color: var(--color-teal); }
-  .form-error { color: var(--color-red); }
+  .form-success { color: var(--gold); }
+  .form-error { color: var(--rose); }
   [hidden] { display: none; }
   @media (max-width: 560px) {
     .form-wrap { padding: 2rem 1.5rem; }

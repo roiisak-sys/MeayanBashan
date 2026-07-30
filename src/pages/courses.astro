@@ -10,6 +10,7 @@ const renderedCourses = await Promise.all(
 <BaseLayout
   title="הרצאות וקורסים בשפת גוף"
   description='הרצאות, סדנאות וקורסי שפת גוף עם מעיין בשן (מעין בשן) - כולל קורס "ניתוח גוף פתוח" ללימוד קריאת שפת גוף וזיהוי שקרים.'
+  bgVariant="mid"
 >
   <section class="courses-page reveal">
     <span class="eyebrow">מה מעיין מלמדת</span>
@@ -31,22 +32,22 @@ const renderedCourses = await Promise.all(
 </BaseLayout>
 <style>
   .courses-page { max-width: 900px; margin: 0 auto; padding: 4rem 2rem; text-align: center; }
-  .courses-page h1 { color: var(--color-teal); margin-bottom: 2.5rem; font-size: clamp(2rem, 4vw, 2.75rem); }
+  .courses-page h1 { color: var(--gold); margin-bottom: 2.5rem; font-size: clamp(2rem, 4vw, 2.75rem); }
   .courses-list { text-align: start; }
   .course-card {
     display: flex;
     gap: 1.5rem;
     padding: 1.75rem;
     margin-bottom: 1.75rem;
-    background: var(--color-cream);
+    background: var(--card);
     border-radius: 4px 18px 18px 18px;
     box-shadow: var(--shadow-hard);
   }
   .tilt-l { transform: rotate(-0.6deg); }
   .tilt-r { transform: rotate(0.6deg); }
   .course-card img { width: 160px; height: 160px; object-fit: cover; border-radius: 10px; flex-shrink: 0; }
-  .course-body h2 { color: var(--color-teal); font-size: 1.35rem; margin-bottom: 0.35rem; }
-  .format { font-family: var(--font-serif); color: var(--color-red); font-weight: 700; }
+  .course-body h2 { color: var(--gold); font-size: 1.35rem; margin-bottom: 0.35rem; }
+  .format { font-family: var(--font-serif); color: var(--rose); font-weight: 700; }
   @media (max-width: 640px) {
     .course-card { flex-direction: column; transform: none; }
     .course-card img { width: 100%; height: auto; }

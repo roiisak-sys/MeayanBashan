@@ -1,17 +1,32 @@
 :root {
-  --color-teal: #17836a;
-  --color-orange: #f4af43;
-  --color-cream: #fbf4e7;
-  --color-red: #db3429;
-  --color-text: #2b2b2b;
-  --ink: #0f3229;
-  --paper: #fffdf9;
+  /* gold + rose accents (shared across every page) */
+  --gold: #c9a05c;
+  --gold-soft: #e6cd94;
+  --gold-deep: #8a6423;
+  --rose: #e8a1b1;
+
+  /* navy family - --bg/--bg-alt are overridden per page via [data-theme] for depth variation */
+  --navy-deepest: #05070f;
+  --navy-deep: #0a0e1c;
+  --bg: #0b1024;
+  --bg-alt: #121a38;
+  --card: #17204a;
+  --ink: #f3efe3;
+  --ink-dim: rgba(243, 239, 227, 0.72);
+  --border: rgba(201, 160, 92, 0.28);
+
   --font-base: 'Assistant', 'Segoe UI', sans-serif;
   --font-display: 'Heebo', 'Assistant', sans-serif;
   --font-serif: 'Frank Ruhl Libre', Georgia, serif;
-  --shadow-hard: 0.5rem 0.5rem 0 rgba(15, 50, 41, 0.16);
+  --shadow-hard: 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.35);
   --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
 }
+
+/* per-page navy depth variants - set via BaseLayout's bgVariant prop */
+body[data-theme='deep'] { --bg: var(--navy-deepest); --bg-alt: #0a0e1c; --card: #121a38; }
+body[data-theme='base'] { --bg: #0b1024; --bg-alt: #121a38; --card: #17204a; }
+body[data-theme='mid'] { --bg: #141d3f; --bg-alt: #1b2650; --card: #202c5c; }
+body[data-theme='light'] { --bg: #1a2547; --bg-alt: #212f5c; --card: #263460; }
 
 * {
   box-sizing: border-box;
@@ -24,8 +39,8 @@ html, body {
 
 body {
   font-family: var(--font-base);
-  color: var(--color-text);
-  background: var(--paper);
+  color: var(--ink);
+  background: var(--bg);
   line-height: 1.5;
 }
 
@@ -46,40 +61,41 @@ h1, h2, h3, h4 {
   margin-top: 0;
 }
 
-/* ===== shared design vocabulary (established on the course landing page) ===== */
+/* ===== shared design vocabulary (established on the advanced-course landing page) ===== */
 
 .eyebrow {
   display: block;
   font-family: var(--font-serif);
   font-weight: 700;
-  color: var(--color-red);
+  color: var(--rose);
   font-size: 0.9rem;
   letter-spacing: 0.05em;
   margin-bottom: 0.5rem;
 }
-.eyebrow-orange { color: var(--color-orange); }
+.eyebrow-orange { color: var(--gold); }
 
 .marker {
   font-style: normal;
-  color: var(--ink);
-  background: linear-gradient(100deg, transparent 2%, var(--color-orange) 2%, var(--color-orange) 98%, transparent 98%);
-  padding: 0 0.35rem;
+  font-weight: 800;
+  color: var(--navy-deep);
+  background: var(--gold-soft);
+  border-radius: 0.15em;
+  padding: 0.02em 0.15em;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
 }
 .marker-soft {
   font-style: normal;
-  background: linear-gradient(180deg, transparent 55%, rgba(244, 175, 67, 0.55) 55%);
-  padding: 0 0.15rem;
+  color: var(--gold);
 }
 
 .section-ink {
-  background: var(--ink);
+  background: var(--navy-deep);
   background-image: var(--grain);
-  color: var(--paper);
+  color: var(--ink);
 }
-.section-ink h1, .section-ink h2, .section-ink h3, .section-ink h4 { color: var(--paper); }
-.section-ink .eyebrow { color: var(--color-orange); }
+.section-ink h1, .section-ink h2, .section-ink h3, .section-ink h4 { color: var(--ink); }
+.section-ink .eyebrow { color: var(--gold); }
 
 .btn {
   display: inline-block;
@@ -97,10 +113,10 @@ h1, h2, h3, h4 {
 }
 .btn:hover {
   transform: translate(-3px, -3px);
-  box-shadow: 0.8rem 0.8rem 0 rgba(15, 50, 41, 0.2);
+  box-shadow: 0.8rem 0.8rem 0 rgba(0, 0, 0, 0.45);
 }
-.btn-orange { background: var(--color-orange); color: var(--ink); }
-.btn-teal { background: var(--color-teal); color: white; }
+.btn-orange { background: linear-gradient(135deg, var(--gold-soft), var(--gold) 60%, var(--gold-deep)); color: var(--navy-deep); }
+.btn-teal { background: transparent; border: 1.5px solid var(--gold); color: var(--ink); }
 
 .reveal {
   opacity: 0;

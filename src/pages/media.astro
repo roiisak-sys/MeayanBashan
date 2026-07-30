@@ -44,6 +44,7 @@ const sections = [
 <BaseLayout
   title="מהמדיה"
   description='מעיין בשן מהמדיה - פרקי הפודקאסט "ניתוח גוף פתוח", אזכורי טלוויזיה ועיתונות של מומחית שפת הגוף מעיין בשן (מעין בשן).'
+  bgVariant="light"
 >
   <section class="media-hero reveal">
     <span class="eyebrow">כפי שהופיעה</span>
@@ -69,14 +70,14 @@ const sections = [
 </BaseLayout>
 <style>
   .media-hero { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem 1rem; text-align: center; }
-  .media-hero h1 { color: var(--color-teal); font-size: clamp(2.2rem, 5vw, 3rem); }
+  .media-hero h1 { color: var(--gold); font-size: clamp(2.2rem, 5vw, 3rem); }
   .media-hero .eyebrow { text-align: center; }
 
   .media-section { padding: 3rem 2rem; }
-  .media-section:nth-of-type(odd) { background: var(--color-cream); }
+  .media-section:nth-of-type(odd) { background: var(--bg-alt); }
   .media-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
   .media-inner > .eyebrow { text-align: center; }
-  .media-inner h2 { color: var(--color-teal); margin-bottom: 2rem; font-size: clamp(1.5rem, 3.5vw, 2rem); }
+  .media-inner h2 { color: var(--gold); margin-bottom: 2rem; font-size: clamp(1.5rem, 3.5vw, 2rem); }
 
   .media-grid {
     display: grid;
@@ -88,15 +89,15 @@ const sections = [
     display: block;
     padding: 1.1rem;
     border-radius: 4px 16px 16px 16px;
-    background: var(--paper);
+    background: var(--card);
     text-decoration: none;
-    color: var(--color-text);
+    color: var(--ink);
     box-shadow: var(--shadow-hard);
     transition: transform 0.15s ease, box-shadow 0.15s ease;
   }
   .media-card:hover {
     transform: translate(-3px, -3px);
-    box-shadow: 0.8rem 0.8rem 0 rgba(15, 50, 41, 0.2);
+    box-shadow: 0.8rem 0.8rem 0 rgba(0, 0, 0, 0.4);
   }
   .media-card img { width: 100%; border-radius: 8px; margin-bottom: 0.75rem; aspect-ratio: 16/9; object-fit: cover; }
   .media-card h3 { font-size: 1.05rem; margin: 0.2rem 0; }

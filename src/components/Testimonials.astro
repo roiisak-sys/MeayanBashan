@@ -27,8 +27,8 @@ const testimonials = await getCollection('testimonials');
   </section>
 )}
 <style>
-  .testimonials { padding: 4rem 2rem; background: var(--paper); text-align: center; }
-  .testimonials h2 { color: var(--color-teal); margin-bottom: 2.5rem; font-size: clamp(1.6rem, 4vw, 2.2rem); }
+  .testimonials { padding: 4rem 2rem; background: var(--bg); text-align: center; }
+  .testimonials h2 { color: var(--gold); margin-bottom: 2.5rem; font-size: clamp(1.6rem, 4vw, 2.2rem); }
   .testimonials-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -40,7 +40,7 @@ const testimonials = await getCollection('testimonials');
     position: relative;
     margin: 0;
     padding: 1.75rem 1.5rem 1.5rem;
-    background: var(--color-cream);
+    background: var(--card);
     border-radius: 4px 16px 16px 16px;
     box-shadow: var(--shadow-hard);
     text-align: start;
@@ -52,7 +52,7 @@ const testimonials = await getCollection('testimonials');
     font-family: var(--font-serif);
     font-size: 3rem;
     line-height: 0.6;
-    color: var(--color-orange);
+    color: var(--gold);
     margin-bottom: 0.75rem;
   }
   blockquote p { margin: 0; line-height: 1.6; }
@@ -61,7 +61,7 @@ const testimonials = await getCollection('testimonials');
     margin-top: 1rem;
     font-weight: 700;
     font-family: var(--font-display);
-    color: var(--color-red);
+    color: var(--rose);
     font-style: normal;
   }
   @media (max-width: 640px) {
@@ -71,11 +71,11 @@ const testimonials = await getCollection('testimonials');
   .testimonial-video {
     max-width: 760px;
     margin: 2.5rem auto 0;
-    border: 3px solid var(--ink);
+    border: 3px solid var(--border);
     border-radius: 18px;
     overflow: hidden;
     box-shadow: var(--shadow-hard);
-    background: var(--ink);
+    background: var(--navy-deep);
   }
   .testimonial-video iframe {
     display: block;

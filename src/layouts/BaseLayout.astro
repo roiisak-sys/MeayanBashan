@@ -9,12 +9,14 @@ interface Props {
   description?: string;
   keywords?: string;
   ogImage?: string;
+  bgVariant?: 'deep' | 'base' | 'mid' | 'light';
 }
 const {
   title,
   description = 'מעיין בשן - מומחית שפת גוף, מרצה ופרשנית תקשורת לא מילולית. הרצאות, קורסים ופודקאסט "ניתוח גוף פתוח".',
   keywords = 'מעיין בשן, מעין בשן, שפת גוף, שפתגוף, ניתוח גוף פתוח, מומחית שפת גוף, קריאת שפת גוף, זיהוי שקרים, חתונמי',
   ogImage = '/images/maayan-hero.png',
+  bgVariant = 'base',
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -75,7 +77,7 @@ const fullTitle = isHome ? title : `${title} | מעיין בשן - מומחית 
       knowsAbout: ['שפת גוף', 'תקשורת לא מילולית', 'ניתוח גוף פתוח', 'זיהוי שקרים'],
     })} />
   </head>
-  <body>
+  <body data-theme={bgVariant}>
     <Nav />
     <main>
       <slot />
