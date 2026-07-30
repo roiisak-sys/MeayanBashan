@@ -49,7 +49,7 @@ const faqs = [
   },
   {
     q: 'מה קורה בכל מפגש בפועל?',
-    a: 'שעה וחצי הרצאה על הנושא של אותו מפגש, ואחריה שעה וחצי תרגול מעשי צמוד עם מעיין ופידבק מיידי - מיקרו-הבעות, סימולציות, ועמידה מול קהל ומצלמה.',
+    a: 'שעתיים הרצאה על הנושא של אותו מפגש, ואחריהן שעתיים תרגול מעשי צמוד עם מעיין ופידבק מיידי - מיקרו-הבעות, סימולציות, ועמידה מול קהל ומצלמה. סה"כ 4 שעות למפגש.',
   },
   {
     q: 'מה תנאי הביטול?',
@@ -83,7 +83,7 @@ const faqs = [
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700&family=Heebo:wght@400;600;700;800&family=Frank+Ruhl+Libre:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -126,7 +126,7 @@ const faqs = [
   </head>
   <body>
     <nav class="ac-nav">
-      <a href="/" class="ac-logo"><img src="/images/logo-teal.png" alt="מעיין בשן" /></a>
+      <a href="/" class="ac-logo"><img src="/images/logo-white.png" alt="מעיין בשן" /></a>
       <a href="#register" class="ac-nav-cta">הרשמה לקורס</a>
     </nav>
 
@@ -135,12 +135,21 @@ const faqs = [
       <div class="ac-hero-shapes" aria-hidden="true">
         <span class="ac-shape ac-shape-diamond1"></span>
         <span class="ac-shape ac-shape-diamond2"></span>
+        <svg class="ac-hero-motif" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M100 20c-30 0-45 22-45 45 0 12 5 20 5 32 0 18-12 25-12 45 0 20 22 36 52 36s52-16 52-36c0-20-12-27-12-45 0-12 5-20 5-32 0-23-15-45-45-45Z" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+          <path d="M100 20v158M70 55c8 6 12 14 12 24M130 55c-8 6-12 14-12 24M62 100c10 4 16 10 18 20M138 100c-10 4-16 10-18 20" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+          <circle cx="70" cy="55" r="2.5" fill="currentColor" opacity="0.7"/>
+          <circle cx="130" cy="55" r="2.5" fill="currentColor" opacity="0.7"/>
+          <circle cx="62" cy="100" r="2.5" fill="currentColor" opacity="0.7"/>
+          <circle cx="138" cy="100" r="2.5" fill="currentColor" opacity="0.7"/>
+          <circle cx="100" cy="150" r="2.5" fill="currentColor" opacity="0.7"/>
+        </svg>
       </div>
       <div class="ac-hero-text">
         <div class="ac-badge">🎓 רק לבוגרים שלנו</div>
         <div class="ac-eyebrow-pill">✦ קורס מתקדמים בשפת גוף · ינואר 2027</div>
         <h1>לקחת את הכלים מהקורס הבסיסי —<br />ולהפוך אותם <em class="ac-marker">למיומנות אוטומטית</em>.</h1>
-        <p class="ac-hero-sub">6 מפגשים פרונטליים של שעה וחצי תיאוריה + שעה וחצי תרגול מעשי בכל מפגש - על הבמה ובזוגות.</p>
+        <p class="ac-hero-sub">6 מפגשים פרונטליים של 4 שעות - מחצית תיאוריה ומחצית תרגול מעשי בכל מפגש - על הבמה ובזוגות.</p>
         <ul class="ac-bullets">
           <li><strong>מו״מ וזיהוי שקרים:</strong> טכניקות מתקדמות לגילוי חוסר אמת ושליטה בשיחה</li>
           <li><strong>פרופיילינג וסכנה:</strong> זיהוי הפרעות אישיות ונורות אדומות בשפת גוף</li>
@@ -162,6 +171,37 @@ const faqs = [
       </div>
     </section>
 
+    <!-- PRACTICE EMPHASIS -->
+    <section class="ac-section ac-practice-section reveal">
+      <div class="ac-inner ac-center">
+        <div class="ac-eyebrow">הבשורה של הקורס למתקדמים</div>
+        <h2>גם ידע מתקדם.<br /><em class="ac-marker">גם יכולת ליישם</em>.</h2>
+        <p class="ac-practice-lead">
+          הכוח של קורס למתקדמים טמון בשילוב המדויק בין התרגול לתאוריה - בכל מפגש צוללים לידע תיאורטי ברמה הגבוהה ביותר, ומייד עולים לתרגל אותו בשטח, ממש באותו ערב. זה לא מבנה של "קודם לומדים, ואולי יום אחד נתרגל" - זה מבנה שחוזר על עצמו בכל אחד משישה המפגשים: תיאוריה עמוקה, ואז תרגול מיידי על אותו החומר, מול המצלמה, מול הקבוצה, ועם פידבק אישי ומדויק של מעיין על כל תזוזה ומיקרו-הבעה. כך יוצאים מכל מפגש בנפרד - לא רק בסוף הקורס - גם עם תובנות עמוקות וחדשות, וגם עם מיומנות פרקטית שמשתמשים בה כבר למחרת בבוקר.
+        </p>
+        <p class="ac-practice-note">התהליך הזה - לומדים, מתרגלים, יוצאים עם יכולת - חוזר בכל אחד משישה המפגשים, לא רק פעם אחת בקורס.</p>
+        <div class="ac-practice-grid">
+          <div class="ac-practice-card">
+            <span class="ac-practice-num">01</span>
+            <h3>לומדים</h3>
+            <p>שעתיים הרצאת עומק על שפת גוף מזווית אחרת בחיים - ידע חדש שלא נלמד בקורס הבסיסי</p>
+          </div>
+          <div class="ac-practice-arrow" aria-hidden="true">←</div>
+          <div class="ac-practice-card">
+            <span class="ac-practice-num">02</span>
+            <h3>מתרגלים</h3>
+            <p>שעתיים תרגול מעשי אינטנסיבי - מיקרו-הבעות, סימולציות, ניתוח בזמן אמת ועמידה מול קהל ומצלמה</p>
+          </div>
+          <div class="ac-practice-arrow" aria-hidden="true">←</div>
+          <div class="ac-practice-card ac-practice-card-gold">
+            <span class="ac-practice-num">03</span>
+            <h3>יוצאים עם יכולת</h3>
+            <p>פידבק מדויק ומיידי על כל תרגיל, בכל אחד מששת המפגשים - כדי שהידע לא יישאר על הנייר, אלא יהפוך ליכולת טבעית בשטח</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- TRUST BAR -->
     <div class="ac-trust-bar">
       <div><span>20+</span>שנות ניסיון</div>
@@ -170,42 +210,12 @@ const faqs = [
       <div><span>1:1</span>יחס תרגול-הרצאה</div>
     </div>
 
-    <!-- PRACTICE EMPHASIS -->
-    <section class="ac-section ac-practice-section reveal">
-      <div class="ac-inner ac-center">
-        <div class="ac-eyebrow">הבשורה של הקורס למתקדמים</div>
-        <h2>גם ידע מתקדם.<br /><em class="ac-marker">גם יכולת ליישם</em>.</h2>
-        <p class="ac-practice-lead">
-          הכוח של קורס למתקדמים טמון בשילוב המדויק בין התרגול לתאוריה - בכל מפגש צוללים לידע תיאורטי ברמה הגבוהה ביותר, ומייד עולים לתרגל אותו בשטח. כל נושא שנלמד, מתורגל באותו המפגש: מול המצלמה, מול הקבוצה, ועם פידבק מיידי של מעיין על כל תזוזה ומיקרו-הבעה. יוצאים מכל מפגש גם עם תובנות עמוקות וחדשות, וגם עם מיומנות פרקטית שמשתמשים בה כבר למחרת בבוקר.
-        </p>
-        <div class="ac-practice-grid">
-          <div class="ac-practice-card">
-            <span class="ac-practice-num">01</span>
-            <h3>לומדים</h3>
-            <p>שעה וחצי הרצאת עומק על שפת גוף מזווית אחרת בחיים - ידע חדש שלא נלמד בקורס הבסיסי</p>
-          </div>
-          <div class="ac-practice-arrow" aria-hidden="true">←</div>
-          <div class="ac-practice-card">
-            <span class="ac-practice-num">02</span>
-            <h3>מתרגלים</h3>
-            <p>שעה וחצי תרגול מעשי אינטנסיבי - מיקרו-הבעות, סימולציות, ניתוח בזמן אמת ועמידה מול קהל ומצלמה</p>
-          </div>
-          <div class="ac-practice-arrow" aria-hidden="true">←</div>
-          <div class="ac-practice-card ac-practice-card-gold">
-            <span class="ac-practice-num">03</span>
-            <h3>יוצאים עם יכולת</h3>
-            <p>פידבק מדויק ומיידי על כל תרגיל בכל מפגש - כדי שהידע לא יישאר על הנייר, אלא יהפוך ליכולת טבעית בשטח</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- MODULES -->
     <section class="ac-section ac-section-alt reveal">
       <div class="ac-inner">
-        <div class="ac-eyebrow">מה לומדים</div>
-        <h2><em class="ac-marker-soft">זוויות מתקדמות</em> שלא הספקנו בקורס הבסיסי</h2>
-        <p class="ac-section-desc">כל מפגש תוקף את שפת הגוף מזווית חדשה, ומיד לאחר מכן - תרגול מעשי אינטנסיבי על אותה זווית בדיוק.</p>
+        <div class="ac-eyebrow ac-eyebrow-lg">מה לומדים</div>
+        <h2><em class="ac-marker-soft">המבט ההקפי</em>: קריאת שפת גוף מזוויות מורכבות</h2>
+        <p class="ac-section-desc">מיישמים את התיאוריה בפועל: תרגול מזוויות שלא הכרתם.</p>
         <div class="ac-modules">
           {modules.map((m, i) => (
             <div class="ac-module">
@@ -230,7 +240,7 @@ const faqs = [
         <div class="ac-guest-text">
           <div class="ac-eyebrow">אורח מיוחד בשני מפגשי הסטוריטלינג</div>
           <h2>מעיין בשן <em class="ac-marker-soft">ואמנון וולף</em></h2>
-          <p>שניים מהמפגשים המיוחדים בקורס נעשים בשיתוף השחקן אמנון וולף - איך מספרים סיפור, ואיך מלבישים אותו בשפת גוף שגורמת לקהל להישאר איתכם עד המילה האחרונה.</p>
+          <p>שניים מהמפגשים המיוחדים בקורס נעשים בשיתוף השחקן אמנון וולף - איך מספרים סיפור, ואיך מלבישים את המילים בשפת גוף נכונה שתפתח לכם דלתות להשיג כל דבר שתבחרו.</p>
         </div>
       </div>
     </section>
@@ -264,7 +274,7 @@ const faqs = [
             <div><h4>קהל יעד</h4><p>רק לבוגרי הקורס הבסיסי · <strong class="ac-marker-soft">עד 40 משתתפים בלבד!</strong></p></div>
           </div>
         </div>
-        <p class="ac-schedule-note">מספר המקומות מוגבל בכוונה - כדי לאפשר תרגול אישי צמוד לכל משתתף בכל מפגש.</p>
+        <p class="ac-schedule-note">מספר המקומות מוגבל בכוונה - כדי לאפשר תרגול משמעותי לכל משתתף.</p>
       </div>
     </section>
 
@@ -272,7 +282,7 @@ const faqs = [
     <section class="ac-section reveal">
       <div class="ac-inner">
         <div class="ac-eyebrow">מחיר</div>
-        <h2>השקעה <em class="ac-marker-soft">ברמה הבאה</em></h2>
+        <h2><em class="ac-marker-soft">מחיר מיוחד</em> לנרשמים המוקדמים</h2>
         <p class="ac-section-desc">שישה מפגשי עומק מרוכזים, יחס גבוה במיוחד בין הרצאה לתרגול מעשי אישי מול מעיין.</p>
         <div class="ac-early-bird-banner">
           <span class="ac-early-bird-icon">⏳</span>
@@ -286,7 +296,7 @@ const faqs = [
             <div class="ac-price-label">מחיר מיוחד לבוגרים · לנרשמים המקדימים</div>
             <div class="ac-price-was">מחיר מקורי: 4,400 ₪</div>
             <div class="ac-price-now">3,800 <span>₪</span></div>
-            <p>שישה מפגשי עומק, שלוש שעות כל מפגש - הרצאה מעמיקה ותרגול מעשי צמוד עם פידבק מיידי.</p>
+            <p>שישה מפגשי עומק, ארבע שעות כל מפגש - הרצאה מעמיקה ותרגול מעשי צמוד עם פידבק מיידי.</p>
             <a href="#register" class="ac-btn">הרשמה עכשיו ←</a>
             <div class="ac-urgency"><span class="ac-urgency-dot"></span> עד 40 בוגרים בלבד - פחות ממה שזה נשמע</div>
           </div>
@@ -450,28 +460,33 @@ const faqs = [
 </html>
 
 <style>
-  /* ===== light luxury tokens ===== */
+  /* ===== navy & gold tokens ===== */
   :root {
-    --ac-ivory: #faf5ec;
-    --ac-cream: #f2e6d3;
-    --ac-charcoal: #2e261f;
-    --ac-gold: #b8792a;
-    --ac-gold-soft: #e8c076;
-    --ac-rose: #9c3f4c;
-    --ac-teal: #146652;
-    --ac-font-display: 'Frank Ruhl Libre', 'Bellefair', serif;
-    --ac-font-label: 'Heebo', 'Assistant', sans-serif;
+    --ac-bg: #0b1024;
+    --ac-bg-alt: #121a38;
+    --ac-card: #17204a;
+    --ac-ink: #f3efe3;
+    --ac-ink-dim: rgba(243, 239, 227, 0.72);
+    --ac-navy-deep: #0a0e1c;
+    --ac-gold: #c9a05c;
+    --ac-gold-soft: #e6cd94;
+    --ac-gold-deep: #8a6423;
+    --ac-rose: #dd7f93;
+    --ac-teal: #5fd9bd;
+    --ac-border: rgba(201, 160, 92, 0.28);
+    --ac-font-display: 'Assistant', sans-serif;
+    --ac-font-label: 'Assistant', sans-serif;
     --ac-font-body: 'Assistant', sans-serif;
-    --ac-shadow-soft: 0 14px 36px rgba(46, 38, 31, 0.1);
-    --ac-shadow-soft-lg: 0 22px 50px rgba(46, 38, 31, 0.16);
+    --ac-shadow-soft: 0 14px 36px rgba(0, 0, 0, 0.35);
+    --ac-shadow-soft-lg: 0 22px 55px rgba(0, 0, 0, 0.5);
   }
 
-  body { background: var(--ac-ivory); color: var(--ac-charcoal); }
-  h1, h2, h3 { font-family: var(--ac-font-display); font-weight: 700; letter-spacing: -0.01em; }
+  body { background: var(--ac-bg); color: var(--ac-ink); }
+  h1, h2, h3 { font-family: var(--ac-font-display); font-weight: 800; letter-spacing: -0.01em; }
 
   .ac-marker {
     font-style: normal;
-    color: var(--ac-charcoal);
+    color: var(--ac-navy-deep);
     background: linear-gradient(180deg, transparent 58%, var(--ac-gold-soft) 58%);
     padding: 0 0.2rem;
     box-decoration-break: clone;
@@ -484,7 +499,7 @@ const faqs = [
   .ac-marker-strike {
     font-style: normal;
     position: relative;
-    color: rgba(58, 51, 44, 0.45);
+    color: rgba(243, 239, 227, 0.4);
   }
   .ac-marker-strike::after {
     content: '';
@@ -504,14 +519,14 @@ const faqs = [
     justify-content: space-between;
     align-items: center;
     padding: 0.85rem 2rem;
-    background: rgba(250, 245, 236, 0.92);
+    background: rgba(11, 16, 36, 0.88);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(184, 134, 63, 0.25);
+    border-bottom: 1px solid var(--ac-border);
   }
   .ac-logo img { height: 26px; width: auto; }
   .ac-nav-cta {
     background: var(--ac-gold);
-    color: var(--ac-ivory);
+    color: var(--ac-navy-deep);
     font-family: var(--ac-font-label);
     font-weight: 700;
     font-size: 0.9rem;
@@ -521,7 +536,7 @@ const faqs = [
     white-space: nowrap;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
   }
-  .ac-nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(184, 134, 63, 0.3); }
+  .ac-nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(201, 160, 92, 0.3); }
 
   /* ===== hero ===== */
   .ac-hero {
@@ -532,10 +547,10 @@ const faqs = [
     gap: 2rem;
     padding: 4rem 3rem 3.5rem;
     background:
-      radial-gradient(ellipse 900px 600px at 88% 10%, rgba(227, 196, 143, 0.5), transparent 65%),
-      radial-gradient(ellipse 700px 500px at 5% 100%, rgba(185, 123, 106, 0.16), transparent 60%),
-      var(--ac-ivory);
-    color: var(--ac-charcoal);
+      radial-gradient(ellipse 900px 600px at 88% 10%, rgba(201, 160, 92, 0.22), transparent 65%),
+      radial-gradient(ellipse 700px 500px at 5% 100%, rgba(221, 127, 147, 0.12), transparent 60%),
+      var(--ac-bg);
+    color: var(--ac-ink);
     overflow: hidden;
   }
   .ac-shape { position: absolute; pointer-events: none; }
@@ -544,7 +559,7 @@ const faqs = [
     top: -60px;
     width: 200px;
     height: 200px;
-    border: 1.5px solid rgba(184, 134, 63, 0.25);
+    border: 1.5px solid var(--ac-border);
     transform: rotate(45deg);
   }
   .ac-shape-diamond2 {
@@ -552,47 +567,57 @@ const faqs = [
     bottom: -80px;
     width: 220px;
     height: 220px;
-    border: 1.5px dashed rgba(185, 123, 106, 0.25);
+    border: 1.5px dashed rgba(221, 127, 147, 0.25);
     transform: rotate(45deg);
   }
+  .ac-hero-motif {
+    position: absolute;
+    inset-inline-end: 4%;
+    top: 8%;
+    width: 180px;
+    height: 180px;
+    color: var(--ac-gold);
+    opacity: 0.35;
+  }
+  @media (max-width: 860px) { .ac-hero-motif { display: none; } }
 
   .ac-hero-text { max-width: 580px; position: relative; z-index: 2; }
   .ac-badge {
     display: inline-block;
     font-family: var(--ac-font-label);
-    font-weight: 700;
-    font-size: 0.85rem;
-    background: var(--ac-charcoal);
-    color: var(--ac-ivory);
-    padding: 0.4rem 1rem;
+    font-weight: 800;
+    font-size: 1.15rem;
+    background: var(--ac-gold);
+    color: var(--ac-navy-deep);
+    padding: 0.55rem 1.4rem;
     border-radius: 999px;
-    margin-bottom: 0.85rem;
+    margin-bottom: 1rem;
   }
   .ac-eyebrow-pill {
     display: block;
     font-family: var(--ac-font-label);
-    color: var(--ac-gold);
-    font-size: 0.85rem;
+    color: var(--ac-gold-soft);
+    font-size: 1.2rem;
     font-weight: 800;
-    margin-bottom: 1.25rem;
-    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.03em;
   }
   .ac-hero h1 {
     font-size: clamp(2.4rem, 5.5vw, 3.9rem);
     line-height: 1.18;
-    font-weight: 900;
+    font-weight: 800;
     letter-spacing: -0.02em;
     margin-bottom: 1.25rem;
-    color: var(--ac-charcoal);
+    color: var(--ac-ink);
   }
-  .ac-hero-sub { font-family: var(--ac-font-body); font-size: 1.1rem; margin-bottom: 1.75rem; color: rgba(58, 51, 44, 0.7); }
+  .ac-hero-sub { font-family: var(--ac-font-body); font-size: 1.1rem; margin-bottom: 1.75rem; color: var(--ac-ink-dim); }
   .ac-bullets { list-style: none; padding: 0; margin: 0 0 2rem; display: grid; gap: 0.7rem; font-family: var(--ac-font-label); }
   .ac-bullets li { padding-inline-start: 1.9rem; position: relative; font-weight: 500; }
   .ac-bullets li::before {
     content: '›';
     position: absolute;
     inset-inline-start: 0;
-    color: var(--ac-ivory);
+    color: var(--ac-navy-deep);
     background: var(--ac-gold);
     width: 1.25rem;
     height: 1.25rem;
@@ -608,8 +633,8 @@ const faqs = [
 
   .ac-btn {
     display: inline-block;
-    background: linear-gradient(135deg, var(--ac-gold-soft), var(--ac-gold) 60%, #96601f);
-    color: var(--ac-ivory);
+    background: linear-gradient(135deg, var(--ac-gold-soft), var(--ac-gold) 60%, var(--ac-gold-deep));
+    color: var(--ac-navy-deep);
     font-family: var(--ac-font-label);
     font-weight: 800;
     font-size: 1.02rem;
@@ -618,21 +643,21 @@ const faqs = [
     border-radius: 999px;
     text-decoration: none;
     white-space: nowrap;
-    box-shadow: var(--ac-shadow-soft), 0 0 0 1px rgba(184, 121, 42, 0.25) inset;
+    box-shadow: var(--ac-shadow-soft), 0 0 0 1px rgba(201, 160, 92, 0.3) inset;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
   }
-  .ac-btn:hover { transform: translateY(-2px); box-shadow: var(--ac-shadow-soft-lg), 0 0 24px rgba(184, 121, 42, 0.35); }
+  .ac-btn:hover { transform: translateY(-2px); box-shadow: var(--ac-shadow-soft-lg), 0 0 24px rgba(201, 160, 92, 0.45); }
 
   .ac-price-tag { display: flex; flex-direction: column; line-height: 1.4; font-family: var(--ac-font-label); }
   .ac-price-old { text-decoration: line-through; opacity: 0.5; font-size: 0.9rem; }
   .ac-price-tag strong { color: var(--ac-rose); font-size: 1.25rem; }
-  .ac-price-tag span:last-child { font-size: 0.85rem; opacity: 0.65; }
+  .ac-price-tag span:last-child { font-size: 0.85rem; opacity: 0.65; color: var(--ac-ink-dim); }
 
   .ac-hero-image { position: relative; z-index: 2; }
   .ac-hero-frame {
     position: absolute;
     inset: -16px;
-    border: 1.5px solid rgba(184, 121, 42, 0.45);
+    border: 1.5px solid rgba(201, 160, 92, 0.5);
     border-radius: 50%;
   }
   .ac-hero-image::before {
@@ -643,7 +668,7 @@ const faqs = [
     width: min(340px, 100%);
     aspect-ratio: 1;
     border-radius: 50%;
-    background: radial-gradient(circle at 50% 32%, #34291f, #1c1712 88%);
+    background: radial-gradient(circle at 50% 32%, #1a2242, #080b17 88%);
     z-index: 0;
   }
   .ac-hero-image img {
@@ -661,37 +686,39 @@ const faqs = [
     gap: 3.5rem;
     flex-wrap: wrap;
     padding: 1.5rem 2rem;
-    background: var(--ac-charcoal);
-    color: var(--ac-ivory);
+    background: var(--ac-bg-alt);
+    color: var(--ac-ink);
     font-weight: 600;
     font-family: var(--ac-font-label);
   }
   .ac-trust-bar div { display: flex; align-items: baseline; gap: 0.5rem; }
   .ac-trust-bar span {
     font-family: var(--ac-font-display);
+    font-weight: 800;
     font-size: 1.9rem;
     color: var(--ac-gold-soft);
   }
 
   /* ===== sections ===== */
-  .ac-section { padding: 4.5rem 2rem; background: var(--ac-ivory); }
-  .ac-section-alt { background: var(--ac-cream); }
+  .ac-section { padding: 4.5rem 2rem; background: var(--ac-bg); }
+  .ac-section-alt { background: var(--ac-bg-alt); }
   .ac-inner { max-width: 1000px; margin: 0 auto; }
   .ac-eyebrow {
     font-family: var(--ac-font-label);
     font-weight: 800;
     color: var(--ac-rose);
-    font-size: 0.85rem;
-    letter-spacing: 0.08em;
-    margin-bottom: 0.6rem;
+    font-size: 1.05rem;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.7rem;
     display: block;
   }
+  .ac-eyebrow-lg { font-size: 1.3rem; }
   .ac-section h2 {
-    color: var(--ac-charcoal);
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    color: var(--ac-ink);
+    font-size: clamp(2.1rem, 4.5vw, 2.9rem);
     margin-bottom: 0.85rem;
   }
-  .ac-section-desc { margin-bottom: 2.25rem; max-width: 640px; font-family: var(--ac-font-body); color: rgba(58, 51, 44, 0.75); }
+  .ac-section-desc { margin-bottom: 2.25rem; max-width: 640px; font-family: var(--ac-font-body); color: var(--ac-ink-dim); }
   .ac-center { text-align: center; }
   .ac-center .ac-section-desc, .ac-center h2 { margin-inline: auto; }
 
@@ -701,11 +728,19 @@ const faqs = [
   /* ===== practice emphasis ===== */
   .ac-practice-lead {
     max-width: 680px;
-    margin: 0 auto 2.75rem;
+    margin: 0 auto 1.25rem;
     font-family: var(--ac-font-body);
     font-size: 1.1rem;
     line-height: 1.8;
-    color: rgba(58, 51, 44, 0.8);
+    color: var(--ac-ink-dim);
+  }
+  .ac-practice-note {
+    max-width: 680px;
+    margin: 0 auto 2.75rem;
+    font-family: var(--ac-font-label);
+    font-weight: 700;
+    font-size: 0.98rem;
+    color: var(--ac-gold-soft);
   }
   .ac-practice-grid {
     display: flex;
@@ -717,26 +752,27 @@ const faqs = [
   .ac-practice-card {
     flex: 1 1 220px;
     max-width: 260px;
-    background: var(--ac-ivory);
-    border: 1px solid rgba(184, 134, 63, 0.3);
+    background: var(--ac-card);
+    border: 1px solid var(--ac-border);
     border-radius: 14px;
     padding: 1.75rem 1.5rem;
     box-shadow: var(--ac-shadow-soft);
   }
   .ac-practice-card-gold {
-    background: linear-gradient(165deg, var(--ac-gold-soft), var(--ac-cream));
+    background: linear-gradient(165deg, rgba(201, 160, 92, 0.28), var(--ac-card));
     border-color: var(--ac-gold);
   }
   .ac-practice-num {
     display: block;
     font-family: var(--ac-font-display);
+    font-weight: 800;
     font-size: 1.3rem;
     color: var(--ac-gold);
     margin-bottom: 0.5rem;
   }
-  .ac-practice-card h3 { font-size: 1.15rem; margin-bottom: 0.5rem; color: var(--ac-charcoal); }
-  .ac-practice-card p { font-family: var(--ac-font-body); font-size: 0.92rem; margin: 0; color: rgba(58, 51, 44, 0.75); }
-  .ac-practice-arrow { align-self: center; font-size: 1.4rem; color: var(--ac-gold); opacity: 0.6; }
+  .ac-practice-card h3 { font-size: 1.15rem; margin-bottom: 0.5rem; color: var(--ac-ink); }
+  .ac-practice-card p { font-family: var(--ac-font-body); font-size: 0.92rem; margin: 0; color: var(--ac-ink-dim); }
+  .ac-practice-arrow { align-self: center; font-size: 1.4rem; color: var(--ac-gold); opacity: 0.7; }
 
   /* ===== modules ===== */
   .ac-modules { display: grid; gap: 1.25rem; margin-top: 2.5rem; }
@@ -744,8 +780,8 @@ const faqs = [
     display: flex;
     gap: 1.5rem;
     align-items: flex-start;
-    background: var(--ac-ivory);
-    border: 1px solid rgba(184, 134, 63, 0.25);
+    background: var(--ac-card);
+    border: 1px solid var(--ac-border);
     border-radius: 14px;
     padding: 1.5rem 1.75rem;
     box-shadow: var(--ac-shadow-soft);
@@ -753,12 +789,14 @@ const faqs = [
   .ac-module-num {
     flex-shrink: 0;
     font-family: var(--ac-font-display);
+    font-weight: 800;
     font-size: 2.1rem;
     color: var(--ac-gold);
     line-height: 1;
   }
-  .ac-module-body h3 { font-family: var(--ac-font-label); color: var(--ac-charcoal); font-size: 1.1rem; margin-bottom: 0.4rem; font-weight: 700; }
-  .ac-module-body p { margin: 0; line-height: 1.7; font-family: var(--ac-font-body); font-size: 0.95rem; color: rgba(58, 51, 44, 0.75); }
+  .ac-module-body h3 { font-family: var(--ac-font-label); color: var(--ac-ink); font-size: 1.1rem; margin-bottom: 0.4rem; font-weight: 700; }
+  .ac-module-body p { margin: 0; line-height: 1.7; font-family: var(--ac-font-body); font-size: 0.95rem; color: var(--ac-ink-dim); }
+  .ac-module-body strong { color: var(--ac-gold-soft); }
 
   /* ===== guest photos ===== */
   .ac-guest-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
@@ -776,11 +814,11 @@ const faqs = [
     bottom: -12%;
     inset-inline-start: -12%;
     border-radius: 12px;
-    border: 4px solid var(--ac-ivory);
+    border: 4px solid var(--ac-bg);
     box-shadow: var(--ac-shadow-soft);
     z-index: 2;
   }
-  .ac-guest-text p { font-family: var(--ac-font-body); line-height: 1.85; color: rgba(58, 51, 44, 0.8); }
+  .ac-guest-text p { font-family: var(--ac-font-body); line-height: 1.85; color: var(--ac-ink-dim); }
 
   /* ===== schedule tickets ===== */
   .ac-tickets { display: flex; flex-wrap: wrap; gap: 1.25rem; margin-bottom: 2.5rem; }
@@ -788,7 +826,7 @@ const faqs = [
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: var(--ac-ivory);
+    background: var(--ac-card);
     border: 1.5px dashed var(--ac-gold);
     border-radius: 12px;
     padding: 0.9rem 1.4rem;
@@ -797,23 +835,24 @@ const faqs = [
   .ac-ticket-day { font-family: var(--ac-font-label); font-size: 0.8rem; font-weight: 600; color: var(--ac-rose); }
   .ac-ticket-date {
     font-family: var(--ac-font-display);
+    font-weight: 800;
     font-size: 1.7rem;
     color: var(--ac-teal);
     line-height: 1.2;
   }
-  .ac-ticket-num { font-family: var(--ac-font-label); font-size: 0.75rem; opacity: 0.6; }
+  .ac-ticket-num { font-family: var(--ac-font-label); font-size: 0.75rem; opacity: 0.7; color: var(--ac-ink-dim); }
 
   .ac-meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; font-family: var(--ac-font-body); }
   .ac-meta-item { display: flex; gap: 0.65rem; align-items: flex-start; }
-  .ac-meta-item h4 { font-family: var(--ac-font-label); margin: 0 0 0.15rem; color: var(--ac-charcoal); }
-  .ac-meta-item p { margin: 0; font-size: 0.95rem; color: rgba(58, 51, 44, 0.75); }
+  .ac-meta-item h4 { font-family: var(--ac-font-label); margin: 0 0 0.15rem; color: var(--ac-ink); }
+  .ac-meta-item p { margin: 0; font-size: 0.95rem; color: var(--ac-ink-dim); }
   .ac-emoji { font-size: 1.3rem; }
   .ac-schedule-note {
     margin: 1.75rem 0 0;
     font-family: var(--ac-font-label);
     font-weight: 600;
     font-size: 0.95rem;
-    color: var(--ac-rose);
+    color: var(--ac-gold-soft);
   }
 
   /* ===== early bird banner ===== */
@@ -821,7 +860,7 @@ const faqs = [
     display: flex;
     align-items: center;
     gap: 1.25rem;
-    background: linear-gradient(120deg, var(--ac-gold-soft), var(--ac-cream));
+    background: linear-gradient(120deg, rgba(201, 160, 92, 0.22), var(--ac-card));
     border: 1.5px solid var(--ac-gold);
     border-radius: 16px;
     padding: 1.5rem 2rem;
@@ -831,37 +870,39 @@ const faqs = [
   .ac-early-bird-banner strong {
     display: block;
     font-family: var(--ac-font-display);
+    font-weight: 800;
     font-size: 1.35rem;
-    color: var(--ac-charcoal);
+    color: var(--ac-gold-soft);
     margin-bottom: 0.35rem;
   }
   .ac-early-bird-banner p {
     margin: 0;
     font-family: var(--ac-font-body);
-    color: rgba(58, 51, 44, 0.8);
+    color: var(--ac-ink-dim);
     font-size: 0.98rem;
   }
 
   /* ===== price ===== */
   .ac-price-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; align-items: start; }
   .ac-price-card {
-    background: var(--ac-ivory);
-    border: 1px solid rgba(184, 134, 63, 0.3);
+    background: var(--ac-card);
+    border: 1px solid var(--ac-border);
     border-radius: 16px;
     padding: 2.25rem;
     box-shadow: var(--ac-shadow-soft-lg);
   }
   .ac-price-label { font-family: var(--ac-font-label); font-weight: 700; color: var(--ac-rose); margin-bottom: 0.5rem; }
-  .ac-price-was { text-decoration: line-through; opacity: 0.5; font-family: var(--ac-font-label); }
+  .ac-price-was { text-decoration: line-through; opacity: 0.5; font-family: var(--ac-font-label); color: var(--ac-ink-dim); }
   .ac-price-now {
     font-family: var(--ac-font-display);
+    font-weight: 800;
     font-size: 4rem;
     color: var(--ac-teal);
     line-height: 1.1;
     margin-bottom: 0.5rem;
   }
   .ac-price-now span { font-size: 1.8rem; }
-  .ac-price-card p { font-family: var(--ac-font-body); color: rgba(58, 51, 44, 0.75); }
+  .ac-price-card p { font-family: var(--ac-font-body); color: var(--ac-ink-dim); }
   .ac-price-card .ac-btn { margin-top: 1.5rem; }
   .ac-urgency {
     display: flex;
@@ -876,31 +917,31 @@ const faqs = [
   .ac-urgency-dot { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--ac-rose); animation: ac-pulse 1.4s infinite; }
   @keyframes ac-pulse { 50% { opacity: 0.3; } }
   .ac-info-card {
-    background: var(--ac-cream);
+    background: var(--ac-bg-alt);
     border: 1.5px dashed var(--ac-teal);
     border-radius: 16px;
     padding: 2rem;
   }
   .ac-info-tag { font-family: var(--ac-font-label); font-weight: 700; color: var(--ac-teal); }
-  .ac-info-card h3 { color: var(--ac-charcoal); margin: 0.5rem 0; font-size: 1.25rem; }
-  .ac-info-card p { font-family: var(--ac-font-body); font-size: 0.92rem; color: rgba(58, 51, 44, 0.75); }
-  .ac-info-card hr { border: none; border-top: 1px dashed rgba(23, 131, 106, 0.35); margin: 1.25rem 0; }
-  .ac-small { font-size: 0.85rem; opacity: 0.7; font-family: var(--ac-font-body); }
+  .ac-info-card h3 { color: var(--ac-ink); margin: 0.5rem 0; font-size: 1.25rem; }
+  .ac-info-card p { font-family: var(--ac-font-body); font-size: 0.92rem; color: var(--ac-ink-dim); }
+  .ac-info-card hr { border: none; border-top: 1px dashed rgba(95, 217, 189, 0.35); margin: 1.25rem 0; }
+  .ac-small { font-size: 0.85rem; opacity: 0.75; font-family: var(--ac-font-body); color: var(--ac-ink-dim); }
 
   /* ===== payment banner ===== */
   .ac-instant-section {
     background: linear-gradient(120deg, var(--ac-gold-soft), var(--ac-rose));
   }
-  .ac-instant { display: flex; align-items: center; justify-content: space-between; gap: 2rem; color: var(--ac-charcoal); font-family: var(--ac-font-body); }
-  .ac-instant-tag { font-family: var(--ac-font-label); font-weight: 700; color: var(--ac-charcoal); }
-  .ac-instant h3 { font-size: 1.5rem; margin: 0.5rem 0; color: var(--ac-charcoal); }
-  .ac-instant p { margin: 0; opacity: 0.75; }
-  .ac-btn-light { flex-shrink: 0; background: var(--ac-charcoal); color: var(--ac-ivory); }
+  .ac-instant { display: flex; align-items: center; justify-content: space-between; gap: 2rem; color: var(--ac-navy-deep); font-family: var(--ac-font-body); }
+  .ac-instant-tag { font-family: var(--ac-font-label); font-weight: 700; color: var(--ac-navy-deep); }
+  .ac-instant h3 { font-size: 1.5rem; margin: 0.5rem 0; color: var(--ac-navy-deep); }
+  .ac-instant p { margin: 0; opacity: 0.8; }
+  .ac-btn-light { flex-shrink: 0; background: var(--ac-navy-deep); color: var(--ac-gold-soft); }
 
   /* ===== faq ===== */
   .ac-faq-inner { max-width: 760px; }
   .ac-faq-list { display: grid; }
-  .ac-faq-item { border-bottom: 1px solid rgba(184, 134, 63, 0.3); padding: 0.35rem 0; }
+  .ac-faq-item { border-bottom: 1px solid var(--ac-border); padding: 0.35rem 0; }
   .ac-faq-item summary {
     display: flex;
     justify-content: space-between;
@@ -910,7 +951,7 @@ const faqs = [
     font-weight: 700;
     font-size: 1.02rem;
     cursor: pointer;
-    color: var(--ac-charcoal);
+    color: var(--ac-ink);
     padding: 0.85rem 0;
     list-style: none;
   }
@@ -928,13 +969,13 @@ const faqs = [
     font-weight: 700;
     transition: transform 0.2s ease;
   }
-  .ac-faq-item[open] .ac-faq-plus { transform: rotate(45deg); background: var(--ac-gold); color: var(--ac-ivory); }
-  .ac-faq-item p { margin: 0 0 1rem; line-height: 1.7; font-family: var(--ac-font-body); color: rgba(58, 51, 44, 0.8); }
+  .ac-faq-item[open] .ac-faq-plus { transform: rotate(45deg); background: var(--ac-gold); color: var(--ac-navy-deep); }
+  .ac-faq-item p { margin: 0 0 1rem; line-height: 1.7; font-family: var(--ac-font-body); color: var(--ac-ink-dim); }
 
   .ac-faq-addendum {
     margin: 0.25rem 0 1.25rem;
     padding: 1.5rem 1.5rem 1.25rem;
-    background: var(--ac-ivory);
+    background: var(--ac-card);
     border-inline-start: 2px dashed var(--ac-rose);
     border-radius: 4px;
     font-family: var(--ac-font-body);
@@ -958,8 +999,8 @@ const faqs = [
   .ac-faq-contacts li {
     font-weight: 700;
     font-size: 0.88rem;
-    color: var(--ac-charcoal);
-    background: var(--ac-cream);
+    color: var(--ac-ink);
+    background: var(--ac-bg-alt);
     border: 1px solid var(--ac-gold);
     border-radius: 999px;
     padding: 0.3rem 0.9rem;
@@ -970,40 +1011,41 @@ const faqs = [
     display: grid;
     gap: 0.6rem;
   }
-  .ac-faq-rules li { font-size: 0.92rem; line-height: 1.6; }
+  .ac-faq-rules li { font-size: 0.92rem; line-height: 1.6; color: var(--ac-ink-dim); }
   .ac-faq-rules li::marker { font-weight: 800; color: var(--ac-rose); }
-  .ac-faq-fine { font-size: 0.78rem; opacity: 0.65; line-height: 1.6; margin: 0; }
+  .ac-faq-fine { font-size: 0.78rem; opacity: 0.7; line-height: 1.6; margin: 0; color: var(--ac-ink-dim); }
 
   /* ===== register ===== */
-  .ac-register-section { position: relative; background: var(--ac-cream); overflow: hidden; }
+  .ac-register-section { position: relative; background: var(--ac-bg-alt); overflow: hidden; }
   .ac-shape-diamond3 {
     inset-inline-end: -80px;
     bottom: -80px;
     width: 220px;
     height: 220px;
-    border: 1.5px dashed rgba(184, 134, 63, 0.3);
+    border: 1.5px dashed var(--ac-border);
     transform: rotate(45deg);
   }
   .ac-form-wrap {
     position: relative;
     max-width: 580px;
     margin: 0 auto;
-    background: var(--ac-ivory);
-    border: 1px solid rgba(184, 134, 63, 0.3);
+    background: var(--ac-card);
+    border: 1px solid var(--ac-border);
     border-radius: 20px;
     padding: 2.75rem 2.25rem;
     box-shadow: var(--ac-shadow-soft-lg);
   }
   .ac-form-wrap form { display: flex; flex-direction: column; gap: 1.1rem; margin-top: 1.75rem; font-family: var(--ac-font-body); }
   .ac-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
-  .ac-form-wrap label { display: flex; flex-direction: column; gap: 0.35rem; font-weight: 700; font-size: 0.95rem; font-family: var(--ac-font-label); }
+  .ac-form-wrap label { display: flex; flex-direction: column; gap: 0.35rem; font-weight: 700; font-size: 0.95rem; font-family: var(--ac-font-label); color: var(--ac-ink); }
   .ac-form-wrap input {
     padding: 0.7rem;
     border-radius: 10px;
-    border: 1.5px solid rgba(58, 51, 44, 0.2);
+    border: 1.5px solid rgba(243, 239, 227, 0.2);
     font-family: inherit;
     font-size: 1rem;
-    background: var(--ac-cream);
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--ac-ink);
     transition: border-color 0.15s ease;
   }
   .ac-form-wrap input:focus { outline: none; border-color: var(--ac-gold); }
@@ -1011,7 +1053,7 @@ const faqs = [
     font-family: var(--ac-font-label);
     padding: 1rem;
     background: var(--ac-gold);
-    color: var(--ac-ivory);
+    color: var(--ac-navy-deep);
     border: none;
     border-radius: 999px;
     font-weight: 700;
@@ -1025,10 +1067,10 @@ const faqs = [
   .ac-form-success, .ac-form-error { text-align: center; font-weight: 700; margin-top: 1.25rem; font-family: var(--ac-font-label); }
   .ac-form-success { color: var(--ac-teal); }
   .ac-form-success p { margin-bottom: 0.85rem; }
-  .ac-pay-now { color: var(--ac-charcoal); font-weight: 600; }
+  .ac-pay-now { color: var(--ac-ink); font-weight: 600; }
   .ac-form-error { color: var(--ac-rose); }
   [hidden] { display: none; }
-  .ac-disclaimer { text-align: center; font-size: 0.85rem; opacity: 0.6; margin-top: 1.25rem; font-family: var(--ac-font-body); }
+  .ac-disclaimer { text-align: center; font-size: 0.85rem; opacity: 0.65; margin-top: 1.25rem; font-family: var(--ac-font-body); color: var(--ac-ink-dim); }
 
   /* ===== responsive ===== */
   @media (max-width: 860px) {
