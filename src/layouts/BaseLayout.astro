@@ -57,24 +57,63 @@ const fullTitle = isHome ? title : `${title} | מעיין בשן - מומחית 
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageURL} />
 
-    <!-- Structured data: Person -->
+    <!-- Structured data: Person + WebSite -->
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
-      '@type': 'Person',
-      name: 'מעיין בשן',
-      alternateName: ['מעין בשן', 'Maayan Bashan'],
-      jobTitle: 'מומחית שפת גוף',
-      description: 'מעיין בשן - מומחית שפת גוף, מרצה ופרשנית תקשורת לא מילולית, מנחת הפודקאסט "ניתוח גוף פתוח"',
-      url: 'https://maayanbashan.co.il',
-      image: ogImageURL.toString(),
-      sameAs: [
-        'https://www.instagram.com/maayan.bashan/',
-        'https://www.tiktok.com/@maayan.bashan',
-        'https://www.facebook.com/sfatgoof1/',
-        'https://www.youtube.com/@Maayan.bashan',
-        'https://open.spotify.com/show/03Rq0mo36Cz92l8sHh5ltL',
+      '@graph': [
+        {
+          '@type': 'Person',
+          '@id': 'https://maayanbashan.co.il/#person',
+          name: 'מעיין בשן',
+          alternateName: ['מעין בשן', 'Maayan Bashan', 'Maayan Bashan body language'],
+          jobTitle: 'מומחית שפת גוף ותקשורת בלתי-מילולית',
+          description: 'מעיין בשן - מומחית שפת גוף, מרצה ופרשנית תקשורת לא מילולית, מנחת הפודקאסט "ניתוח גוף פתוח". למעלה מ-20 שנות ניסיון בתחום.',
+          url: 'https://maayanbashan.co.il',
+          image: ogImageURL.toString(),
+          nationality: { '@type': 'Country', name: 'Israel' },
+          knowsLanguage: ['he', 'en'],
+          email: 'maayan.inst@gmail.com',
+          telephone: '+972-50-558-5177',
+          sameAs: [
+            'https://www.instagram.com/maayan.bashan/',
+            'https://www.tiktok.com/@maayan.bashan',
+            'https://www.facebook.com/sfatgoof1/',
+            'https://www.youtube.com/@Maayan.bashan',
+            'https://open.spotify.com/show/03Rq0mo36Cz92l8sHh5ltL',
+            'https://creators.spotify.com/pod/profile/maayan-bashan/',
+          ],
+          knowsAbout: [
+            'שפת גוף',
+            'תקשורת בלתי-מילולית',
+            'קריאת אנשים',
+            'מיקרו-הבעות',
+            'זיהוי שקרים',
+            'זיהוי מניפולציות',
+            'שפת גוף במשא ומתן',
+            'שפת גוף במכירות',
+            'נוכחות וכריזמה',
+            'ניתוח גוף פתוח',
+            'body language',
+            'non-verbal communication',
+          ],
+          worksFor: {
+            '@type': 'Organization',
+            '@id': 'https://maayanbashan.co.il/#organization',
+            name: 'מעיין בשן - שפת גוף',
+            url: 'https://maayanbashan.co.il',
+            areaServed: { '@type': 'Country', name: 'Israel' },
+          },
+        },
+        {
+          '@type': 'WebSite',
+          '@id': 'https://maayanbashan.co.il/#website',
+          url: 'https://maayanbashan.co.il',
+          name: 'מעיין בשן - מומחית שפת גוף',
+          description: 'הרצאות, סדנאות וקורסים בשפת גוף ותקשורת בלתי-מילולית עם מעיין בשן.',
+          inLanguage: 'he-IL',
+          publisher: { '@id': 'https://maayanbashan.co.il/#person' },
+        },
       ],
-      knowsAbout: ['שפת גוף', 'תקשורת לא מילולית', 'ניתוח גוף פתוח', 'זיהוי שקרים'],
     })} />
   </head>
   <body data-theme={bgVariant}>
