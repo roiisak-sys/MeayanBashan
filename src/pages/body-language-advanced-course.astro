@@ -285,15 +285,6 @@ const faqs = [
             </div>
           ))}
         </div>
-        <div class="ac-schedule-video">
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/NqNVme4Aka0"
-            title="שפת גוף - קורס מתקדמים"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </div>
         <div class="ac-meta-grid">
           <div class="ac-meta-item">
             <span class="ac-emoji">🕘</span>
@@ -309,6 +300,23 @@ const faqs = [
           </div>
         </div>
         <p class="ac-schedule-note">מספר המקומות מוגבל בכוונה - כדי לאפשר תרגול משמעותי לכל משתתף.</p>
+      </div>
+    </section>
+
+    <!-- GRADUATES VIDEO -->
+    <section class="ac-section ac-graduates-section reveal">
+      <div class="ac-inner ac-center">
+        <div class="ac-eyebrow">מהשטח</div>
+        <h2>בוגרים <em class="ac-marker-soft">מספרים</em></h2>
+        <div class="ac-graduates-video">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/NqNVme4Aka0"
+            title="בוגרים מספרים - קורס שפת גוף של מעיין בשן"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
       </div>
     </section>
 
@@ -880,16 +888,20 @@ const faqs = [
 
   /* ===== schedule tickets ===== */
   .ac-tickets { display: flex; flex-wrap: wrap; gap: 1.25rem; margin-bottom: 2.5rem; }
-  .ac-schedule-video {
+  .ac-graduates-section {
+    background-image: radial-gradient(ellipse 800px 400px at 50% 0%, rgba(201, 160, 92, 0.12), transparent 70%);
+    border-block: 1px solid var(--ac-border);
+  }
+  .ac-graduates-video {
     max-width: 760px;
-    margin: 0 auto 2.5rem;
+    margin: 2rem auto 0;
     border: 1px solid var(--ac-border);
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: var(--ac-shadow-soft);
+    box-shadow: var(--ac-shadow-soft-lg);
     background: var(--ac-navy-deep);
   }
-  .ac-schedule-video iframe {
+  .ac-graduates-video iframe {
     display: block;
     width: 100%;
     aspect-ratio: 16 / 9;
